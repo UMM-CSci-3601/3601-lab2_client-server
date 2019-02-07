@@ -9,7 +9,7 @@ function getAllUsers() {
   console.log("Getting all the users.");
 
   var HttpThingy = new HttpClient();
-  HttpThingy.get("/api/users", function(returned_json){
+  HttpThingy.get("/api/users", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
@@ -18,7 +18,7 @@ function getAllUsersByAge() {
   console.log("Getting all the users.");
 
   var HttpThingy = new HttpClient();
-  HttpThingy.get("/api/users?age=" +  document.getElementById("age").value, function(returned_json){
+  HttpThingy.get("/api/users?age=" + document.getElementById("age").value, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
@@ -32,11 +32,11 @@ function getAllUsersByAge() {
  */
 function HttpClient() {
   // We'll take a URL string, and a callback function.
-  this.get = function(aUrl, aCallback){
+  this.get = function (aUrl, aCallback) {
     var anHttpRequest = new XMLHttpRequest();
 
     // Set a callback to be called when the ready state of our request changes.
-    anHttpRequest.onreadystatechange = function(){
+    anHttpRequest.onreadystatechange = function () {
 
       /**
        * Only call our 'aCallback' function if the ready state is 'DONE' and

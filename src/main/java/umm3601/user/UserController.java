@@ -19,7 +19,7 @@ public class UserController {
 
   /**
    * Construct a controller for users.
-   *
+   * <p>
    * This loads the "database" of user info from a JSON file and
    * stores that internally so that (subsets of) users can be returned
    * in response to requests.
