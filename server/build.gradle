@@ -14,7 +14,7 @@ mainClassName = 'umm3601.Server'
 
 // External dependencies that our application utilizes
 dependencies {
-  compile 'com.sparkjava:spark-core:2.6.0'
+  compile 'com.sparkjava:spark-core:2.9.1'
   compile 'org.slf4j:slf4j-simple:1.7.30'
   compile 'com.google.code.gson:gson:2.8.6'
 
