@@ -26,21 +26,26 @@ mainClassName = 'umm3601.Server'
 // External dependencies that our application utilizes
 dependencies {
   // Google core libraries for Java, various useful utilities
-  implementation 'com.google.guava:guava:28.0-jre'
+  implementation 'com.google.guava:guava:28.2-jre'
 
-  // Spark web framework
-  implementation 'com.sparkjava:spark-core:2.6.0'
+  // Javalin, a simple web framework for Java
+  compile 'io.javalin:javalin:3.7.0'
 
+  // Jackson, a JSON library for Java
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
   // Simple Logging Facade for Java
   implementation 'org.slf4j:slf4j-simple:1.7.30'
 
   implementation 'com.google.code.gson:gson:2.8.6'
 
   // JUnit Jupiter API for testing.
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
 
   // JUnit Jupiter Engine for testing.
-  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+
+  // Mockito for testing
+  testImplementation 'org.mockito:mockito-core:3.2.4'
 }
 
 application {

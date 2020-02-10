@@ -1,14 +1,11 @@
 package umm3601;
 
-import spark.Filter;
-import spark.Request;
-import spark.Response;
-import umm3601.user.Database;
-import umm3601.user.UserController;
-
 import java.io.IOException;
 
-import static spark.Spark.*;
+import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
+import umm3601.user.Database;
+import umm3601.user.UserController;
 
 public class Server {
 
@@ -21,50 +18,36 @@ public class Server {
     // Initialize dependencies
     UserController userController = buildUserController();
 
-    // Configure Spark
-    port(4567);
-
-    // Specify where client assets are stored
-    // (all client-side HTML, CSS, JS, images, etc)
-    staticFiles.externalLocation(CLIENT_DIRECTORY);
+    Javalin server = Javalin.create(config -> {
+      // This tells the server where to look for static files,
+      // like HTML and JavaScript.
+      config.addStaticFiles(CLIENT_DIRECTORY, Location.EXTERNAL);
+      // The next line starts the server listening on port 4567.
+    }).start(4567);
 
     // Simple example route
-    get("/hello", (req, res) -> "Hello World");
+    server.get("/hello", ctx -> ctx.result("Hello World"));
 
     // Redirects to create simpler URLs
-    redirect.get("/about", "/about.html");
-    redirect.get("/users", "/users.html");
+    server.get("/about", ctx -> ctx.redirect("/about.html"));
+    server.get("/users", ctx -> ctx.redirect("/users.html"));
 
     // API endpoints
 
     // Get specific user
-    get("api/users/:id", userController::getUser);
+    server.get("api/users/:id", ctx -> userController.getUser(ctx));
+
     // List users, filtered using query parameters
-    get("api/users", userController::getUsers);
-
-    // An example of throwing an unhandled exception so you can see how the
-    // Java Spark debugger displays errors like this.
-    get("api/error", (req, res) -> {
-      throw new RuntimeException("A demonstration error");
-    });
-
-    // Called after each request to insert the GZIP header into the response.
-    // This causes the response to be compressed _if_ the client specified
-    // in their request that they can accept compressed responses.
-    // There's a similar "before" method that can be used to modify requests
-    // before they they're processed by things like `get`.
-    after("*", addGzipHeader);
+    server.get("api/users", ctx -> userController.getUsers(ctx));
   }
 
   /***
-   * Create a database using the json fie, use it as
-   * data source for a new UserController
+   * Create a database using the json file, use it as data source for a new
+   * UserController
    *
-   * Constructing the controller might throw an IOException if
-   * there are problems reading from the JSON "database" file.
-   * If that happens we'll print out an error message and shut
-   * the server down.
-   * @throws IOException if we can't open or read the user data file
+   * Constructing the controller might throw an IOException if there are problems
+   * reading from the JSON "database" file. If that happens we'll print out an
+   * error message exit the program.
    */
   private static UserController buildUserController() {
     UserController userController = null;
@@ -76,17 +59,10 @@ public class Server {
       System.err.println("The server failed to load the user data; shutting down.");
       e.printStackTrace(System.err);
 
-      // Shut the server down
-      stop();
+      // Exit from the Java program
       System.exit(1);
     }
 
     return userController;
   }
-
-  // Enable GZIP for all responses
-  private static Filter addGzipHeader = (Request request, Response response) -> {
-    response.header("Content-Encoding", "gzip");
-  };
-
 }

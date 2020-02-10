@@ -1,11 +1,10 @@
 package umm3601.user;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests umm3601.user.Database getUser functionality
