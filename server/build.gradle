@@ -10,7 +10,7 @@ plugins {
   id 'jacoco'
 }
 
-// Make sure the project is built and ran with Java 11
+// Build and run the project with Java 11
 java {
   toolchain {
     languageVersion = JavaLanguageVersion.of(11)

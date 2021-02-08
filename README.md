@@ -93,7 +93,8 @@ Like in previous labs, click "Install All" to automatically install them.
 
 If you use Chrome, you may find it helpful to install the [JSONView][jsonview-chrome] extension.
 This will make JSON in the browser look pretty and actually be readable when you visit the different API endpoints.
-Firefox has this functionality built in so there is no need to install an extension.
+
+If you use Firefox, this functionality is built-in, so there is no need to install an extension.
 
 ## Running Your project
 
@@ -136,8 +137,9 @@ To run your server-side tests: while in the `server` directory, run:
 ./gradlew test
 ```
 
-This will run all tests and output info about the run to a test report "website". To see the report open the file in your browser: 
-```
+This will run all tests and output info about the run to a test report "website". To see the report open the file in your browser:
+
+```text
 server/build/reports/tests/test/index.html
 ```
 
@@ -145,9 +147,9 @@ It will look something like this:
 
 ![image](https://user-images.githubusercontent.com/1300395/107262491-3cf57780-6a06-11eb-9e5b-68d4491cde47.png)
 
-These test reports are especially helpful when a test fails because you will get the full stacktrace there. 
+These test reports are especially helpful when a test fails because you will get the full stack trace there.
 
-When a test fails you will get a notice in the terminal that there were failing tests along with a path to the report. You can copy that path into your browser to see the report.
+When a test fails, you will get a notice in the terminal that there were failing tests along with a path to the report. You can copy that path into your browser to see the report.
 
 ## Checking your code coverage
 
@@ -160,11 +162,11 @@ so you can see how well your tests cover (i.e., exercise) your code. The command
 
 will run the tests followed by the test coverage report generator. This report is a "website" like the one from JUnit above. To see the report open the file in your browser:
 
-```
+```text
 server/build/jacocoHtml/index.html
 ```
 
-It will look something like this: 
+It will look something like this:
 
 ![image](https://user-images.githubusercontent.com/1300395/107262605-5c8ca000-6a06-11eb-9844-f7b5d1265eb2.png)
 
