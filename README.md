@@ -89,13 +89,11 @@ Don't worry if you don't get the dialog, it is probably because you already have
 
 Like in previous labs, click "Install All" to automatically install them.
 
-### Install JSONView browser extension
+### JSONView browser extension
 
-You'll also want the JSONView extension for either Firefox or Chrome installed.
-This will make JSON in the browser look pretty and actually be readable.
-
-* Firefox: [JSONView][jsonview-firefox]
-* Chrome: [JSONView][jsonview-chrome]
+If you use Chrome you may find it helpful to install the [JSONView][jsonview-chrome] extension.
+This will make JSON in the browser look pretty and actually be readable when you visit the different API endpoints.
+Firefox has this functionality built in so there is no need to install an extension.
 
 ## Running Your project
 
@@ -225,7 +223,6 @@ We include a Gradle wrapper which lets you run gradle tasks from the command lin
 [jasmine]: https://jasmine.github.io/
 [jasmine-introduction]: http://jasmine.github.io/2.0/introduction.html
 [jsonview-chrome]: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
-[jsonview-firefox]: https://addons.mozilla.org/en-us/firefox/addon/jsonview/
 [karma]: https://karma-runner.github.io/1.0/index.html
 [labtasks]: LABTASKS.md
 [local]: http://localhost:4567/
