@@ -185,7 +185,9 @@ It will look something like this:
 ![image](https://user-images.githubusercontent.com/1300395/107262605-5c8ca000-6a06-11eb-9844-f7b5d1265eb2.png)
 
 If you generate and look at that report at the start of the lab, you'll see that you start
-with 100% coverage of all the `user` files. You'd like to keep it that way, so check your
+with 100% coverage of everything but the `Server.java`
+file, e.g., we're great on all the `user` files.
+You'd like to keep it that way, so check your
 code coverage after major stories are finished and look for areas that you're not yet testing.
 
 :bangbang: The server file itself currently has 0% coverage, although we think we could
