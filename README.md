@@ -219,11 +219,7 @@ We include a Gradle wrapper which lets you run gradle tasks from the command lin
 
 [javalin-io]: https://javalin.io
 [gradle]: https://gradle.org/
-[intellij-idea]: https://www.jetbrains.com/idea/
-[jasmine]: https://jasmine.github.io/
-[jasmine-introduction]: http://jasmine.github.io/2.0/introduction.html
 [jsonview-chrome]: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
-[karma]: https://karma-runner.github.io/1.0/index.html
 [labtasks]: LABTASKS.md
 [local]: http://localhost:4567/
 [rest-best-practices]: https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
