@@ -1,6 +1,20 @@
-# CSCI 3601 Lab #2 - Building a web server in Java with Javalin
+# CSCI 3601 Lab #2 - Building a web server in Java with Javalin <!-- omit in toc -->
 
 [![Server Build Status](../../workflows/Server%20Java/badge.svg?branch=master)](../../actions?query=workflow%3A"Server+Java")
+
+* [Overview of the project](#overview-of-the-project)
+* [Setup](#setup)
+  * [Cloning the project in GitKraken](#cloning-the-project-in-gitkraken)
+  * [Open the project in VS Code](#open-the-project-in-vs-code)
+  * [JSONView browser extension](#jsonview-browser-extension)
+* [Running Your project](#running-your-project)
+* [Testing Your Project](#testing-your-project)
+* [Checking your code coverage](#checking-your-code-coverage)
+* [Continuous Integration with GitHub Actions](#continuous-integration-with-github-actions)
+* [Go do the lab!](#go-do-the-lab)
+* [Resources](#resources)
+  * [Running in the command line](#running-in-the-command-line)
+  * [Handling requests in Javalin](#handling-requests-in-javalin)
 
 Here you will explore serving up a simple website that you create,
 using a server written with the [Javalin framework][javalin-io] server.
