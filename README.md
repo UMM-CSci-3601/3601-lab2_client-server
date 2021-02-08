@@ -91,7 +91,7 @@ Like in previous labs, click "Install All" to automatically install them.
 
 ### JSONView browser extension
 
-If you use Chrome you may find it helpful to install the [JSONView][jsonview-chrome] extension.
+If you use Chrome, you may find it helpful to install the [JSONView][jsonview-chrome] extension.
 This will make JSON in the browser look pretty and actually be readable when you visit the different API endpoints.
 Firefox has this functionality built in so there is no need to install an extension.
 
