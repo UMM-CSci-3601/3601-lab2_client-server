@@ -89,13 +89,11 @@ Don't worry if you don't get the dialog, it is probably because you already have
 
 Like in previous labs, click "Install All" to automatically install them.
 
-### Install JSONView browser extension
+### JSONView browser extension
 
-You'll also want the JSONView extension for either Firefox or Chrome installed.
-This will make JSON in the browser look pretty and actually be readable.
-
-* Firefox: [JSONView][jsonview-firefox]
-* Chrome: [JSONView][jsonview-chrome]
+If you use Chrome, you may find it helpful to install the [JSONView][jsonview-chrome] extension.
+This will make JSON in the browser look pretty and actually be readable when you visit the different API endpoints.
+Firefox has this functionality built in so there is no need to install an extension.
 
 ## Running Your project
 
@@ -122,14 +120,6 @@ run on.
 Visit it at [http://localhost:4567][local] in your web browser. The
 server will continue to run indefinitely until you stop it
 
-To run the JUnit tests:
-
-```bash
-./gradlew test
-```
-
-You can also run your tests right in VS Code by clicking the "Run Test" link above them.
-
 ## Testing Your Project
 
 There's very little meaningful logic in the client component of this
@@ -140,22 +130,24 @@ labs.
 The server-side portion of this project will be tested using JUnit.
 Server-side tests are located in the `src/test/java` directory.
 
-To run your server-side tests, you have a few options:
+To run your server-side tests: while in the `server` directory, run:
 
-You can run `./gradlew test` from the `server` directory in the terminal to run all tests and output info about the run to an HTML file.
+```bash
+./gradlew test
+```
 
-Additionally, you can go to the Test pane on the left side of VS Code and run all or individual tests from there.
-The test pane looks like this:
+This will run all tests and output info about the run to a test report "website". To see the report open the file in your browser: 
+```
+server/build/reports/tests/test/index.html
+```
 
-![VS Code test pane](https://i.vgy.me/TAfWcG.png)
+It will look something like this:
 
-You can also run your tests right in the code editor by clicking the "Run Test" link above them.
+![image](https://user-images.githubusercontent.com/1300395/107262491-3cf57780-6a06-11eb-9e5b-68d4491cde47.png)
 
-![VS Code inline testing](https://i.vgy.me/SxWfWh.png)
+These test reports are especially helpful when a test fails because you will get the full stacktrace there. 
 
-This last two options are particularly nice because it gives you better
-integrated feedback in VS Code and the ability to just run single
-tests or files of tests when you're trying to debug a complex problem.
+When a test fails you will get a notice in the terminal that there were failing tests along with a path to the report. You can copy that path into your browser to see the report.
 
 ## Checking your code coverage
 
@@ -166,12 +158,15 @@ so you can see how well your tests cover (i.e., exercise) your code. The command
 ./gradlew test jacocoTestReport
 ```
 
-will run the tests followed by the test coverage report generator. The report is in fact
-a small "website" composed of a collection of HTML files. To see the report open the file
+will run the tests followed by the test coverage report generator. This report is a "website" like the one from JUnit above. To see the report open the file in your browser:
 
-```bash
+```
 server/build/jacocoHtml/index.html
 ```
+
+It will look something like this: 
+
+![image](https://user-images.githubusercontent.com/1300395/107262605-5c8ca000-6a06-11eb-9844-f7b5d1265eb2.png)
 
 If you generate and look at that report at the start of the lab, you'll see that you start
 with 100% coverage of all the `user` files. You'd like to keep it that way, so check your
@@ -221,12 +216,7 @@ We include a Gradle wrapper which lets you run gradle tasks from the command lin
 
 [javalin-io]: https://javalin.io
 [gradle]: https://gradle.org/
-[intellij-idea]: https://www.jetbrains.com/idea/
-[jasmine]: https://jasmine.github.io/
-[jasmine-introduction]: http://jasmine.github.io/2.0/introduction.html
 [jsonview-chrome]: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
-[jsonview-firefox]: https://addons.mozilla.org/en-us/firefox/addon/jsonview/
-[karma]: https://karma-runner.github.io/1.0/index.html
 [labtasks]: LABTASKS.md
 [local]: http://localhost:4567/
 [rest-best-practices]: https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
