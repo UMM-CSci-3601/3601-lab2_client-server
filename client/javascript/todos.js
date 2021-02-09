@@ -1,7 +1,7 @@
 // gets todos from the api.
 // It adds the values of the various inputs to the requested URl to filter and order the returned todos.
 function getFilteredTodos() {
-  console.log("Getting all the todos.");
+  console.log("Getting todos");
 
   var url = "/api/todos?";
   if(document.getElementById("owner").value != "") {
@@ -24,6 +24,7 @@ function getFilteredTodos() {
   }
 
   get(url, function(returned_json){
+    document.getElementById("requestUrl").innerHTML = url;
     document.getElementById('jsonDump').innerHTML = syntaxHighlight(JSON.stringify(returned_json, null, 2));
   });
 }

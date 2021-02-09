@@ -35,16 +35,14 @@
   </select><br>
   Limit: <input id="limit" type="text" name="limit"><br>
 
-  <button type="button" id="getTodos"> Get Todos </button>
+  <button type="button" id="getTodos">Get Todos</button>
 
-  <pre id="jsonDump"> JSON will go here </pre>
+  <div style="margin-top: 20px;">Requested URL: <code id="requestUrl">(the requested API URL will appear here)</code></div>
+  <pre id="jsonDump">JSON will go here</pre>
 
   <script>
     window.onload = function() {
-      console.log("The page is loaded now!");
-
-      var element = document.getElementById('getTodos');
-      element.addEventListener("click", getFilteredTodos, true);
+      document.getElementById('getTodos').addEventListener("click", getFilteredTodos, true);
     }
   </script>
 </body>
