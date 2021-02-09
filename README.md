@@ -2,19 +2,17 @@
 
 [![Server Build Status](../../workflows/Server%20Java/badge.svg?branch=master)](../../actions?query=workflow%3A"Server+Java")
 
-* [Overview of the project](#overview-of-the-project)
-* [Setup](#setup)
-  * [Cloning the project in GitKraken](#cloning-the-project-in-gitkraken)
-  * [Open the project in VS Code](#open-the-project-in-vs-code)
-  * [JSONView browser extension](#jsonview-browser-extension)
-* [Running Your project](#running-your-project)
-* [Testing Your Project](#testing-your-project)
-* [Checking your code coverage](#checking-your-code-coverage)
-* [Continuous Integration with GitHub Actions](#continuous-integration-with-github-actions)
-* [Go do the lab!](#go-do-the-lab)
-* [Resources](#resources)
-  * [Running in the command line](#running-in-the-command-line)
-  * [Handling requests in Javalin](#handling-requests-in-javalin)
+- [Overview of the project](#overview-of-the-project)
+- [Setup](#setup)
+  - [Cloning the project in GitKraken](#cloning-the-project-in-gitkraken)
+  - [Open the project in VS Code](#open-the-project-in-vs-code)
+  - [JSONView browser extension](#jsonview-browser-extension)
+- [Running Your project](#running-your-project)
+- [Testing Your Project](#testing-your-project)
+- [Checking your code coverage](#checking-your-code-coverage)
+- [Continuous Integration with GitHub Actions](#continuous-integration-with-github-actions)
+- [Go do the lab!](#go-do-the-lab)
+- [Resources](#resources)
 
 Here you will explore serving up a simple website that you create,
 using a server written with the [Javalin framework][javalin-io] server.
@@ -214,16 +212,6 @@ Now that you're all set up, you should be ready to head over to [LABTASKS.md](./
 most of the actual work of the lab is described.
 
 ## Resources
-
-### Running in the command line
-
-We include a Gradle wrapper which lets you run gradle tasks from the command line. So, you can run tasks like:
-
-```bash
-./gradlew test
-```
-
-### Handling requests in Javalin
 
 * [Getting started in Javalin](https://javalin.io/documentation#getting-started)
 * [Javalin tutorials](https://javalin.io/tutorials/)
