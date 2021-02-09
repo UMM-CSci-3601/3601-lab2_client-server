@@ -1,4 +1,16 @@
-# Lab Tasks
+# Lab Tasks <!-- omit in toc -->
+
+* [Notes on notation and structure](#notes-on-notation-and-structure)
+* [Exploring the project](#exploring-the-project)
+* [Exploring the server](#exploring-the-server)
+* [Exploring the client](#exploring-the-client)
+* [Use ZenHub to support Agile development](#use-zenhub-to-support-agile-development)
+  * [Setting up the project ZenHub board](#setting-up-the-project-zenhub-board)
+  * [Using the board](#using-the-board)
+* [The epics/features](#the-epicsfeatures)
+* [Questions](#questions)
+
+## Notes on notation and structure
 
 * Questions that you need to answer (as a group!) are indicated with question mark symbols (:question:).
 * The [Questions](./LABTASKS.md#questions) section is at the end of this document.
@@ -32,7 +44,7 @@ Run it according to the instructions in the
 [README](./README.md), including running the JUnit tests. Answer
 the following questions.
 
-> Protip: Using Google to gain additional knowledge or support your conjectures
+> Pro-tip: Using Google to gain additional knowledge or support your conjectures
 about how something works is great! It's important that you think about how everything
 fits together and works, though, so don't use Google as a replacement for
 building your understanding or you will regret it!

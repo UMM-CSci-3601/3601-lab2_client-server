@@ -21,16 +21,13 @@
   <br>
   <button type="button" id="getUsers">Get Users</button>
 
-
-  <pre id="jsonDump" > Json will go here</pre>
+  <div style="margin-top: 20px;">Requested URL: <code id="requestUrl">(the requested API URL will appear here)</code></div>
+  <pre id="jsonDump">JSON will go here</pre>
 
 
   <script>
     window.onload = function () {
-      console.log("The page is loaded now!");
-
-      var element = document.getElementById('getUsers');
-      element.addEventListener("click", getFilteredUsers, true);
+      document.getElementById('getUsers').addEventListener("click", getFilteredUsers, true);
     }
   </script>
 </body>
