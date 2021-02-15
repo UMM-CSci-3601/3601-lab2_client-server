@@ -8,20 +8,20 @@ import java.util.HashMap;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests umm3601.user.Database listUser functionality
+ * Tests umm3601.user.UserDatabase listUser functionality
  */
 public class FullUserListFromDB {
 
   @Test
   public void totalUserCount() throws IOException {
-    Database db = new Database("/users.json");
+    UserDatabase db = new UserDatabase("/users.json");
     User[] allUsers = db.listUsers(new HashMap<>());
     assertEquals(10, allUsers.length, "Incorrect total number of users");
   }
 
   @Test
   public void firstUserInFullList() throws IOException {
-    Database db = new Database("/users.json");
+    UserDatabase db = new UserDatabase("/users.json");
     User[] allUsers = db.listUsers(new HashMap<>());
     User firstUser = allUsers[0];
     assertEquals("Connie Stewart", firstUser.name, "Incorrect name");
