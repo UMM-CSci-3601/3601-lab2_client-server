@@ -11,7 +11,7 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests umm3601.user.Database filterUsersByAge and listUsers with _age_ query
+ * Tests umm3601.user.UserDatabase filterUsersByAge and listUsers with _age_ query
  * parameters
  */
 public class FilterUsersByAgeFromDB {

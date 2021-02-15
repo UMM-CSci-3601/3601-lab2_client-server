@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests umm3601.user.Database getUser functionality
+ * Tests umm3601.user.UserDatabase getUser functionality
  */
 public class GetUserByIDFromDB {
 

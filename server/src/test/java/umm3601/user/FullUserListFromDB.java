@@ -8,7 +8,7 @@ import java.util.HashMap;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests umm3601.user.Database listUser functionality
+ * Tests umm3601.user.UserDatabase listUser functionality
  */
 public class FullUserListFromDB {
 
