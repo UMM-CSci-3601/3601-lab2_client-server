@@ -6,7 +6,7 @@ updates:
     interval: weekly
     time: "12:00"
     timezone: America/Chicago
-  open-pull-requests-limit: 20
+  open-pull-requests-limit: 100
   ignore:
   - dependency-name: io.javalin:javalin
     versions:
