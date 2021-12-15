@@ -11,14 +11,14 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests umm3601.user.Database listUsers with _age_ and _company_ query
+ * Tests umm3601.user.UserDatabase listUsers with _age_ and _company_ query
  * parameters
  */
 public class FilterUsersByCombinedFiltersFromDB {
 
   @Test
   public void listUsersWithCombinedFilters() throws IOException {
-    Database db = new Database("/users.json");
+    UserDatabase db = new UserDatabase("/users.json");
     Map<String, List<String>> queryParams = new HashMap<>();
 
     queryParams.put("age", Arrays.asList(new String[] { "25" }));
