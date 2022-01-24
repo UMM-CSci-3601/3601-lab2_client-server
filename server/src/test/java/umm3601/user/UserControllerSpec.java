@@ -130,14 +130,18 @@ public class UserControllerSpec {
 
   @Test
   public void GET_to_request_user_with_existent_id() throws IOException {
-    when(ctx.pathParam("id", String.class)).thenReturn(new Validator<String>("588935f5c668650dc77df581", "", "id"));
+    String id = "588935f5c668650dc77df581";
+    User user = db.getUser(id);
+
+    when(ctx.pathParam("id")).thenReturn(id);
     userController.getUser(ctx);
+    verify(ctx).json(user);
     verify(ctx).status(201);
   }
 
   @Test
   public void GET_to_request_user_with_nonexistent_id() throws IOException {
-    when(ctx.pathParam("id", String.class)).thenReturn(new Validator<String>("nonexistent", "", "id"));
+    when(ctx.pathParam("id")).thenReturn(null);
     Assertions.assertThrows(NotFoundResponse.class, () -> {
       userController.getUser(ctx);
     });
