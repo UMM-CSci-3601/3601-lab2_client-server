@@ -1,6 +1,6 @@
 # CSCI 3601 Lab #2 - Building a web server in Java with Javalin <!-- omit in toc -->
 
-[![Server Build Status](../../workflows/Server%20Java/badge.svg?branch=master)](../../actions?query=workflow%3A"Server+Java")
+[![Server Build Status](../../actions/workflows/server-gradle.yml/badge.svg)](../../actions/workflows/server-gradle.yml)
 
 - [Overview of the project](#overview-of-the-project)
 - [Setup](#setup)
