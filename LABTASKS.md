@@ -271,7 +271,7 @@ project, and what is the purpose of `build.gradle`?
 
 :question: *4* Explain what an _endpoint_ is (also often called a _route_). (You might look at the
 [Javalin](https://javalin.io/documentation#endpoint-handlers)
-for some help here.)
+documentation for some help here.)
 
 :question: *5* What is the purpose of `umm3601.Server` class?
 What is the purpose of the `umm3601.user.UserController` class?
