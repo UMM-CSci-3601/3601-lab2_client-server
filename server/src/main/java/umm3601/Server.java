@@ -9,6 +9,7 @@ import umm3601.user.UserController;
 
 public class Server {
 
+  private static final int PORT_NUMBER = 4567;
   public static final String CLIENT_DIRECTORY = "../client";
   public static final String USER_DATA_FILE = "/users.json";
   private static UserDatabase userDatabase;
@@ -22,8 +23,8 @@ public class Server {
       // This tells the server where to look for static files,
       // like HTML and JavaScript.
       config.addStaticFiles(CLIENT_DIRECTORY, Location.EXTERNAL);
-      // The next line starts the server listening on port 4567.
-    }).start(4567);
+      // The next line starts the server listening on the specified port.
+    }).start(PORT_NUMBER);
 
     // Simple example route
     server.get("/hello", ctx -> ctx.result("Hello World"));

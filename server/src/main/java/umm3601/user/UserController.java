@@ -33,7 +33,6 @@ public class UserController {
     User user = database.getUser(id);
     if (user != null) {
       ctx.json(user);
-      ctx.status(201);
     } else {
       throw new NotFoundResponse("No user with id " + id + " was found.");
     }

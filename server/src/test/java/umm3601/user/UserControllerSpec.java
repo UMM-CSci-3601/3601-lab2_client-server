@@ -27,6 +27,14 @@ import umm3601.Server;
  *
  * @throws IOException
  */
+// The tests here include a ton of "magic numbers" (numeric constants).
+// It wasn't clear to me that giving all of them names would actually
+// help things. The fact that it wasn't obvious what to call some
+// of them says a lot. Maybe what this ultimately means is that
+// these tests can/should be restructured so the constants (there are
+// also a lot of "magic strings" that Checkstyle doesn't actually
+// flag as a problem) make more sense.
+@SuppressWarnings({ "MagicNumber" })
 public class UserControllerSpec {
 
   private Context ctx = mock(Context.class);
@@ -56,7 +64,7 @@ public class UserControllerSpec {
   @Test
   public void GET_to_request_age_25_users() throws IOException {
     Map<String, List<String>> queryParams = new HashMap<>();
-    queryParams.put("age", Arrays.asList(new String[] { "25" }));
+    queryParams.put("age", Arrays.asList(new String[] {"25"}));
     when(ctx.queryParamMap()).thenReturn(queryParams);
 
     userController.getUsers(ctx);
@@ -79,7 +87,7 @@ public class UserControllerSpec {
     // We'll set the requested "age" to be a string ("abc")
     // that can't be parsed to a number.
     Map<String, List<String>> queryParams = new HashMap<>();
-    queryParams.put("age", Arrays.asList(new String[] { "abc" }));
+    queryParams.put("age", Arrays.asList(new String[] {"abc"}));
 
     when(ctx.queryParamMap()).thenReturn(queryParams);
     // This should now throw a `BadRequestResponse` exception because
@@ -93,7 +101,7 @@ public class UserControllerSpec {
   public void GET_to_request_company_OHMNET_users() throws IOException {
 
     Map<String, List<String>> queryParams = new HashMap<>();
-    queryParams.put("company", Arrays.asList(new String[] { "OHMNET" }));
+    queryParams.put("company", Arrays.asList(new String[] {"OHMNET"}));
 
     when(ctx.queryParamMap()).thenReturn(queryParams);
     userController.getUsers(ctx);
@@ -110,9 +118,9 @@ public class UserControllerSpec {
   public void GET_to_request_company_OHMNET_age_25_users() throws IOException {
 
     Map<String, List<String>> queryParams = new HashMap<>();
-    queryParams.put("company", Arrays.asList(new String[] { "OHMNET" }));
+    queryParams.put("company", Arrays.asList(new String[] {"OHMNET"}));
 
-    queryParams.put("age", Arrays.asList(new String[] { "25" }));
+    queryParams.put("age", Arrays.asList(new String[] {"25"}));
 
     when(ctx.queryParamMap()).thenReturn(queryParams);
     userController.getUsers(ctx);
