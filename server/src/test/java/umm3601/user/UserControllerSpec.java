@@ -159,7 +159,7 @@ public class UserControllerSpec {
   }
 
   @Test
-  public void respondAppropriatelyToRequestForNonexistentId() throws IOException {
+  public void respondsAppropriatelyToRequestForNonexistentId() throws IOException {
     when(ctx.pathParam("id")).thenReturn(null);
     Assertions.assertThrows(NotFoundResponse.class, () -> {
       userController.getUser(ctx);
