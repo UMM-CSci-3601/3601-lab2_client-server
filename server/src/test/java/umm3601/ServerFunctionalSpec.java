@@ -23,7 +23,7 @@ public class ServerFunctionalSpec {
 
   @BeforeAll
   public static void startServer() {
-    Server.main(null);
+    Server.main(new String[0]);
   }
 
   @AfterAll
