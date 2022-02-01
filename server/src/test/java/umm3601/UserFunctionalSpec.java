@@ -51,6 +51,14 @@ public class UserFunctionalSpec {
     String usersJson = objectMapper.writeValueAsString(userDatabase.listUsers(new HashMap<String, List<String>>()));
     HttpResponse<String> response = Unirest.get("http://localhost:4567/api/users").asString();
     assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "Getting all the users should return OK status");
+    /*
+     * We don't want to just compare strings directly, because the order of fields in a JSON object isn't specified,
+     * and two "equal" objects could have their fields in different orders. If we just did a pure String comparison
+     * we'd get that wrong; if we use the Jackson ObjectMapper to turn them into JSON objects and compare *those*,
+     * we we avoid that problem.
+     *
+     * See this for more examples and info: https://www.baeldung.com/jackson-compare-two-json-objects
+     */
     assertEquals(objectMapper.readTree(usersJson), objectMapper.readTree(response.getBody()), "The list of users didn't match");
   }
 
@@ -60,6 +68,14 @@ public class UserFunctionalSpec {
     String user = objectMapper.writeValueAsString(userDatabase.getUser(id));
     HttpResponse<String> response = Unirest.get("http://localhost:4567/api/users/" + id).asString();
     assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "Getting an existing user should return OK status");
+    /*
+     * We don't want to just compare strings directly, because the order of fields in a JSON object isn't specified,
+     * and two "equal" objects could have their fields in different orders. If we just did a pure String comparison
+     * we'd get that wrong; if we use the Jackson ObjectMapper to turn them into JSON objects and compare *those*,
+     * we we avoid that problem.
+     *
+     * See this for more examples and info: https://www.baeldung.com/jackson-compare-two-json-objects
+     */
     assertEquals(objectMapper.readTree(user), objectMapper.readTree(response.getBody()), "The user didn't match");
   }
 }
