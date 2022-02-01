@@ -36,7 +36,7 @@ dependencies {
   // Jackson, a JSON library for Java
   implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
   // Simple Logging Facade for Java
-  implementation 'org.slf4j:slf4j-simple:1.7.33'
+  implementation 'org.slf4j:slf4j-simple:1.7.35'
 
   implementation 'com.google.code.gson:gson:2.8.9'
 
@@ -47,7 +47,7 @@ dependencies {
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 
   // Mockito for testing
-  testImplementation 'org.mockito:mockito-core:4.3.0'
+  testImplementation 'org.mockito:mockito-core:4.3.1'
 }
 
 application {
