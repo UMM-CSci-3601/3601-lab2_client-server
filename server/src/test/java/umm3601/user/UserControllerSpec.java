@@ -96,7 +96,7 @@ public class UserControllerSpec {
    * we get a reasonable error code back.
    */
   @Test
-  public void respondAppropriatelyToIllegalAge() {
+  public void respondsAppropriatelyToIllegalAge() {
     // We'll set the requested "age" to be a string ("abc")
     // that can't be parsed to a number.
     Map<String, List<String>> queryParams = new HashMap<>();
