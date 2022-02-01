@@ -26,8 +26,8 @@ public class Server {
       config.addStaticFiles(CLIENT_DIRECTORY, Location.EXTERNAL);
       // This adds a Javalin plugin that will list all of the
       // routes/endpoints that we add below on a page reachable
-      // via the "/route-overview" path.
-      config.registerPlugin(new RouteOverviewPlugin("/route-overview"));
+      // via the "/api" path.
+      config.registerPlugin(new RouteOverviewPlugin("/api"));
       // The next line starts the server listening on port 4567.
     }).start(PORT_NUMBER);
 
@@ -41,10 +41,10 @@ public class Server {
     // API endpoints
 
     // Get specific user
-    server.get("/api/users/{id}", ctx -> userController.getUser(ctx));
+    server.get("/api/users/{id}", userController::getUser);
 
     // List users, filtered using query parameters
-    server.get("/api/users", ctx -> userController.getUsers(ctx));
+    server.get("/api/users", userController::getUsers);
   }
 
   /***
