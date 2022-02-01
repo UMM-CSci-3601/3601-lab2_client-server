@@ -1,6 +1,6 @@
 package umm3601;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -50,8 +50,8 @@ public class UserFunctionalSpec {
   public void canGetAllUsers() throws JsonProcessingException {
     String usersJson = objectMapper.writeValueAsString(userDatabase.listUsers(new HashMap<String, List<String>>()));
     HttpResponse<String> response = Unirest.get("http://localhost:4567/api/users").asString();
-    assertThat(response.getStatus()).isEqualTo(HttpCode.OK.getStatus());
-    assertThat(response.getBody()).isEqualTo(usersJson);
+    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "Getting all the users should return OK status");
+    assertEquals(objectMapper.readTree(usersJson), objectMapper.readTree(response.getBody()), "The list of users didn't match");
   }
 
   @Test
@@ -59,7 +59,7 @@ public class UserFunctionalSpec {
     String id = "588935f5c668650dc77df581";
     String user = objectMapper.writeValueAsString(userDatabase.getUser(id));
     HttpResponse<String> response = Unirest.get("http://localhost:4567/api/users/" + id).asString();
-    assertThat(response.getStatus()).isEqualTo(HttpCode.OK.getStatus());
-    assertThat(response.getBody()).isEqualTo(user);
+    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "Getting an existing user should return OK status");
+    assertEquals(objectMapper.readTree(user), objectMapper.readTree(response.getBody()), "The user didn't match");
   }
 }

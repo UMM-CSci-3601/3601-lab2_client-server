@@ -1,6 +1,7 @@
 package umm3601;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -34,21 +35,21 @@ public class ServerFunctionalSpec {
   @Test
   public void helloWorks() {
     HttpResponse<String> response = Unirest.get("http://localhost:4567/hello").asString();
-    assertThat(response.getStatus()).isEqualTo(HttpCode.OK.getStatus());
-    assertThat(response.getBody()).isEqualTo("Hello World");
+    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "The '/hello' path should return OK status");
+    assertEquals("Hello World", response.getBody(), "The '/hello' path should greet us with 'Hello World'");
   }
 
   @Test
   public void usersRedirects() {
     HttpResponse<String> response = Unirest.get("http://localhost:4567/users").asString();
-    assertThat(response.getStatus()).isEqualTo(HttpCode.OK.getStatus());
-    assertThat(response.getBody()).contains("<!DOCTYPE html>");
+    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "The '/users' path should return OK status");
+    assertTrue(response.getBody().contains("<!DOCTYPE html>"));
   }
 
   @Test void todosRedirects() {
     HttpResponse<String> response = Unirest.get("http://localhost:4567/todos").asString();
-    assertThat(response.getStatus()).isEqualTo(HttpCode.OK.getStatus());
-    assertThat(response.getBody()).contains("<!DOCTYPE html>");
+    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "The '/todos' path should return OK status");
+    assertTrue(response.getBody().contains("<!DOCTYPE html>"));
   }
 
 }

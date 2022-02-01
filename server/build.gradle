@@ -53,9 +53,6 @@ dependencies {
 
   // Unirest for testing
   testImplementation 'com.konghq:unirest-java:3.11.09'
-
-  // AssertJ for testing
-  testImplementation 'org.assertj:assertj-core:3.22.0'
 }
 
 application {
