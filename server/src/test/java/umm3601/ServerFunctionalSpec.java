@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import io.javalin.http.HttpCode;
+import kong.unirest.HeaderNames;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
@@ -40,16 +41,13 @@ public class ServerFunctionalSpec {
   }
 
   @Test
-  public void usersRedirects() {
-    HttpResponse<String> response = Unirest.get("http://localhost:4567/users").asString();
-    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "The '/users' path should return OK status");
-    assertTrue(response.getBody().contains("<!DOCTYPE html>"));
+  public void staticFilesWork() {
+    String[] staticFileEndpoints = { "users.html", "users", "todos.html", "todos" };
+    for (String endpoint : staticFileEndpoints) {
+      HttpResponse<String> response = Unirest.get("http://localhost:4567/" + endpoint).asString();
+      assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "The '/users' path should return OK status");
+      assertEquals("text/html", response.getHeaders().getFirst(HeaderNames.CONTENT_TYPE), "MIME type should be 'text/html'");
+      assertTrue(response.getBody().contains("<!DOCTYPE html>"));
+    }
   }
-
-  @Test void todosRedirects() {
-    HttpResponse<String> response = Unirest.get("http://localhost:4567/todos").asString();
-    assertEquals(HttpCode.OK.getStatus(), response.getStatus(), "The '/todos' path should return OK status");
-    assertTrue(response.getBody().contains("<!DOCTYPE html>"));
-  }
-
 }
