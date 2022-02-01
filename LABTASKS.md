@@ -1,14 +1,14 @@
 # Lab Tasks <!-- omit in toc -->
 
-* [Notes on notation and structure](#notes-on-notation-and-structure)
-* [Exploring the project](#exploring-the-project)
-* [Exploring the server](#exploring-the-server)
-* [Exploring the client](#exploring-the-client)
-* [Use ZenHub to support Agile development](#use-zenhub-to-support-agile-development)
-  * [Setting up the project ZenHub board](#setting-up-the-project-zenhub-board)
-  * [Using the board](#using-the-board)
-* [The epics/features](#the-epicsfeatures)
-* [Questions](#questions)
+- [Notes on notation and structure](#notes-on-notation-and-structure)
+- [Exploring the project](#exploring-the-project)
+- [Exploring the server](#exploring-the-server)
+- [Exploring the client](#exploring-the-client)
+- [Use ZenHub to support Agile development](#use-zenhub-to-support-agile-development)
+  - [Setting up the project ZenHub board](#setting-up-the-project-zenhub-board)
+  - [Using the board](#using-the-board)
+- [The epics/features](#the-epicsfeatures)
+- [Questions](#questions)
 
 ## Notes on notation and structure
 
@@ -205,6 +205,11 @@ you should implement (and create meaningful server-side tests for) the following
 
 * List all the todos
   * Implement an `api/todos` server-side endpoint, which returns all the to-dos
+* List a single todo by ID
+  * Implement an `api/todos/58895985c1849992336c219b` server-side endpoint, which
+    returns the single todo with the given `_id`. It should return a 404
+    (use the Javalin `NotFoundResponse` class) if there is no todo with the
+    specified `_id`.
 * Support limiting the number of todos that are displayed
   * Implement an `api/todos?limit=7` API endpoint, which lets you specify the maximum
     number of todos that the server returns.
