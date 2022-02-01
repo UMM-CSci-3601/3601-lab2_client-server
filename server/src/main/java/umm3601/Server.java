@@ -34,6 +34,10 @@ public class Server {
     // Simple example route
     server.get("/hello", ctx -> ctx.result("Hello World"));
 
+    // Redirects to create simpler URLs
+    server.get("/users", ctx -> ctx.redirect("/users.html"));
+    server.get("/todos", ctx -> ctx.redirect("/todos.html"));
+
     // API endpoints
 
     // Get specific user
