@@ -5,15 +5,16 @@ function getFilteredUsers() {
 
   var url = "/api/users?";
   if(document.getElementById("age").value != "") {
-    url = url + "&age=" + document.getElementById("age").value;
+    url = url + "&age=" + getFieldValue("age");
   }
   if(document.getElementById("company").value != "") {
-    url = url + "&company=" + document.getElementById("company").value;
+    url = url + "&company=" + getFieldValue("company");
   }
-
 
   get(url, function(returned_json){
     document.getElementById("requestUrl").innerHTML = url;
     document.getElementById('jsonDump').innerHTML = syntaxHighlight(JSON.stringify(returned_json, null, 2));
   });
 }
+
+

@@ -5,22 +5,22 @@ function getFilteredTodos() {
 
   var url = "/api/todos?";
   if(document.getElementById("owner").value != "") {
-    url = url + "&owner=" + document.getElementById("owner").value;
+    url = url + "&owner=" + getFieldValue("owner");
   }
   if(document.getElementById("category").value != "") {
-    url = url + "&category=" + document.getElementById("category").value;
+    url = url + "&category=" + getFieldValue("category");
   }
   if(document.getElementById("status").value != "") {
-    url = url + "&status=" + document.getElementById("status").value;
+    url = url + "&status=" + getFieldValue("status");
   }
   if(document.getElementById("contains").value != "") {
-    url = url + "&contains=" + document.getElementById("contains").value;
+    url = url + "&contains=" + getFieldValue("contains");
   }
   if(document.getElementById("orderBy").value != "") {
-    url = url + "&orderBy=" + document.getElementById("orderBy").value;
+    url = url + "&orderBy=" + getFieldValue("orderBy");
   }
   if(document.getElementById("limit").value != "") {
-    url = url + "&limit=" + document.getElementById("limit").value;
+    url = url + "&limit=" + getFieldValue("limit");
   }
 
   get(url, function(returned_json){
