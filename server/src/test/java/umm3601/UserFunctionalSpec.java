@@ -1,4 +1,4 @@
-package umm3601.user;
+package umm3601;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import io.javalin.http.HttpCode;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-import umm3601.Server;
+import umm3601.user.UserDatabase;
 
 /**
  * A set of simple functional tests that ensure that the
