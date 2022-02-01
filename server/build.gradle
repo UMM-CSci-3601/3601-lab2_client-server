@@ -48,6 +48,12 @@ dependencies {
 
   // Mockito for testing
   testImplementation 'org.mockito:mockito-core:4.3.0'
+
+  // Unirest for testing
+  testImplementation 'com.konghq:unirest-java:3.11.09'
+
+  // AssertJ for testing
+  testImplementation 'org.assertj:assertj-core:3.22.0'
 }
 
 application {
@@ -86,7 +92,7 @@ jacocoTestReport {
     // to somehow fake incoming HTTP requests), so we are just
     // leaving it out of the coverage report and the coverage limits.
     classDirectories.setFrom(files(classDirectories.files.collect {
-      fileTree(dir: it, exclude: 'umm3601/Server.class')
+      fileTree(dir: it)
     }))
   }
 }
@@ -135,7 +141,7 @@ jacocoTestCoverageVerification {
   // leaving it out of the coverage report and the coverage limits.
   afterEvaluate {
     classDirectories.setFrom(files(classDirectories.files.collect {
-      fileTree(dir: it, exclude: 'umm3601/Server.class')
+      fileTree(dir: it)
     }))
   }
 }
