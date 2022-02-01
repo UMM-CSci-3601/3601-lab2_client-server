@@ -10,6 +10,7 @@ import umm3601.user.UserController;
 
 public class Server {
 
+  private static final int PORT_NUMBER = 4567;
   public static final String CLIENT_DIRECTORY = "../client";
   public static final String USER_DATA_FILE = "/users.json";
   private static UserDatabase userDatabase;
@@ -29,7 +30,7 @@ public class Server {
       // via the "/route-overview" path.
       config.registerPlugin(new RouteOverviewPlugin("/route-overview"));
       // The next line starts the server listening on port 4567.
-    }).start(4567);
+    }).start(PORT_NUMBER);
 
     // Simple example route
     server.get("/hello", ctx -> ctx.result("Hello World"));
