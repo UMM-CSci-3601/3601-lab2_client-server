@@ -1,4 +1,13 @@
 /*
+ * A small helper function that takes the (HTML) id of a field,
+ * gets the value, and encodes it (so people can't inject query param
+ * elements into the field).
+ */
+function getFieldValue(fieldId) {
+  return encodeURIComponent(document.getElementById(fieldId).value);
+}
+
+/*
  * The next two functions `status` and `json` are used by
  * `get` below to check the status of an HTTP response
  * and convert the response to JSON.
