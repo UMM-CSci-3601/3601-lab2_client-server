@@ -6,7 +6,7 @@
 - [Setup](#setup)
   - [Cloning the project in GitKraken](#cloning-the-project-in-gitkraken)
   - [Open the project in VS Code](#open-the-project-in-vs-code)
-  - [JSONView browser extension](#jsonview-browser-extension)
+  - [JSON viewer browser extension](#json-viewer-browser-extension)
 - [Running Your project](#running-your-project)
 - [Testing Your Project](#testing-your-project)
 - [Checking your code coverage](#checking-your-code-coverage)
@@ -101,9 +101,9 @@ Don't worry if you don't get the dialog, it is probably because you already have
 
 Like in previous labs, click "Install All" to automatically install them.
 
-### JSONView browser extension
+### JSON viewer browser extension
 
-If you use Chrome, you may find it helpful to install the [JSONView][jsonview-chrome] extension.
+If you use Chrome, you may find it helpful to install the [JSONVue][jsonview-chrome] extension.
 This will make JSON in the browser look pretty and actually be readable when you visit the different API endpoints.
 
 If you use Firefox, this functionality is built-in, so there is no need to install an extension.
