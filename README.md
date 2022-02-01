@@ -103,7 +103,7 @@ Like in previous labs, click "Install All" to automatically install them.
 
 ### JSON viewer browser extension
 
-If you use Chrome, you may find it helpful to install the [JSONVue][jsonview-chrome] extension.
+If you use Chrome, you may find it helpful to install the [JSONVue][jsonvue-chrome] extension.
 This will make JSON in the browser look pretty and actually be readable when you visit the different API endpoints.
 
 If you use Firefox, this functionality is built-in, so there is no need to install an extension.
@@ -222,7 +222,7 @@ most of the actual work of the lab is described.
 
 [javalin-io]: https://javalin.io
 [gradle]: https://gradle.org/
-[jsonview-chrome]: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
+[jsonvue-chrome]: https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc?hl=en
 [labtasks]: LABTASKS.md
 [local]: http://localhost:4567/
 [rest-best-practices]: https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
