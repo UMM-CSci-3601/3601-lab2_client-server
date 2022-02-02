@@ -26,4 +26,28 @@ public class User {
   public int age;
   public String company;
   public String email;
+
+  @Override
+  public boolean equals(Object other) {
+    if (this == other) {
+      return true;
+    }
+    if (!(other instanceof User)) {
+      return false;
+    }
+
+    // If they're both users, we'll just go on IDs.
+    User otherUser = (User) other;
+    return this._id.equals(otherUser._id);
+  }
+
+  @Override
+  public int hashCode() {
+    return _id.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return name;
+  }
 }
