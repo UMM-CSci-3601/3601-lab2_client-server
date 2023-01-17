@@ -18,7 +18,7 @@ import org.mockito.ArgumentCaptor;
 
 import io.javalin.http.BadRequestResponse;
 import io.javalin.http.Context;
-import io.javalin.http.HttpCode;
+import io.javalin.http.HttpStatus;
 import io.javalin.http.NotFoundResponse;
 
 import umm3601.Server;
@@ -153,7 +153,7 @@ public class UserControllerSpec {
     userController.getUser(ctx);
 
     verify(ctx).json(user);
-    verify(ctx).status(HttpCode.OK);
+    verify(ctx).status(HttpStatus.OK);
   }
 
   @Test
