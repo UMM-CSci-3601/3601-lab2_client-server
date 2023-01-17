@@ -45,8 +45,6 @@ public class UserControllerSpec {
 
   @BeforeEach
   public void setUp() throws IOException {
-    ctx.clearCookieStore();
-
     db = new UserDatabase(Server.USER_DATA_FILE);
     userController = new UserController(db);
   }
