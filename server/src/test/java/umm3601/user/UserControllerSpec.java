@@ -156,6 +156,7 @@ public class UserControllerSpec {
 
     verify(ctx).json(user);
     verify(ctx).status(HttpStatus.OK);
+    assertEquals("Cervantes Morin", user.name);
   }
 
   @Test
