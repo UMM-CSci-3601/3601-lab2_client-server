@@ -71,7 +71,7 @@ yet. (You can, though. 😄)
 
 ### Using Thunder Client
 
-Thunder client is a tool for debugging the server API output from VSCode. 
+Thunder Client is a tool for debugging the server API output from VSCode. 
 It aids in checking what the server gives us when we make requests to it, which can be 
 really helpful when you're trying to debug what your server gives you.
 
