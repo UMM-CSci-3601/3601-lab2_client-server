@@ -77,7 +77,7 @@ really helpful when you're trying to debug what your server gives you.
 
 #### Usage
 
-To use Thunderclient (once it's installed), open it from the sidebar. 
+To use Thunder Client (once it's installed), open it from the sidebar. 
 The icon is a circle with a lightning bolt in the middle.
 This should add a button in the top of the sidebar labelled `New Request`, click it.  
 This should open a window with two columns. In the top of the left column,
