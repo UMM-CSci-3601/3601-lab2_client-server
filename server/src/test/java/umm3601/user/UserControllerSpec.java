@@ -143,6 +143,7 @@ public class UserControllerSpec {
       assertEquals(25, user.age);
       assertEquals("OHMNET", user.company);
     }
+    assertEquals(1, argument.getValue().length);
   }
 
   @Test
