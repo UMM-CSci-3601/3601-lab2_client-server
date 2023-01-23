@@ -87,17 +87,17 @@ for this lab, which all take the form of augmenting the server API with new func
 
 So before you actually start _coding_ on any of that, you
 should spend some time using ZenHub to capture and estimate
-stories and do some planning.
+issues and do some planning.
 
 * Make sure you've turned on [ZenHub](http://zenhub.com) so it works :smile:
-* Create at least one Milestone that starts on the first day of lab and ends when the lab is due
+* Create at least one epic that starts on the first day of lab and ends when the lab is due
   * If you want to break the lab period into smaller time boxes and have multiple, smaller
-    Milestones, that would be OK as well. If you do this, make sure you provide
+    epics, that would be OK as well. If you do this, make sure you provide
     reasonable start and end dates so one follows on from the
     other, and the first starts at the beginning of the lab
     and the last ends when the lab is due.
 
-Now you'll need to create several _epics_, one for each major feature described below.
+Now you'll need to create several epics, one for each major feature described below.
 (See ["Working with Epics inside GitHub"](https://www.zenhub.com/blog/working-with-epics-in-github/)
 for info on creating and working with epics in ZenHub.) For each epic you should add the issues
 (tasks) that you think you'll need to complete to provide a full version of this feature.
@@ -111,24 +111,24 @@ together "slice the cake":
 >
 >Here, however, we've provided you with a fully functional client, so you won't do any
 work on the client side in this lab. So you won't really slice the cake here, but you should
-be aware that it will be important in the future for your stories to fully slice the cake.
+be aware that it will be important in the future for your issues to fully slice the cake.
 
 :warning: One thing you should **not** do is create separate tasks for things like unit tests
 or refactoring. Those activities should be "baked in" to your work flow, and not considered
 separate (and therefore to some degree optional) activities.
 
-Once you've created and estimated all the stories, you
+Once you've created and estimated all the issues, you
 should think about which ones you think you can reasonably
 do in this lab. This could be all of them, but it doesn't
-have to be. You can always add stories to this Milestone as
+have to be. You can always add issues to this epic as
 things progress, and in general customers would rather see
-the set of stories you expect to complete in this Milestone
+the set of issues you expect to complete in this epic
 _increase_ rather than _decrease_, so being conservative in
 your initial planning is probably a Good Thing.
 
-* You should add the stories that you _expect_ to do in the lab to your Milestone.
-* You should move the stories you expect to do into the Backlog track, and move all the
-  other stories into the Icebox track.
+* You should add the issues that you _expect_ to do in the lab to your epic.
+* You should move the issues you expect to do into the Backlog track, and move all the
+  other issues into the Icebox track.
 
 ### Using the board
 
@@ -137,41 +137,40 @@ lab, using it to guide your decisions about what to work on,
 updating issues as you make progress, etc.
 
 Whenever you sit down to work on the project, you should be
-clearly working on a specific story. If you feel like there's
-something that _needs_ to be done but isn't in a story/issue, you
-should make a story for that before you start working on it.
+clearly working on a specific issue. If you feel like there's
+something that _needs_ to be done but isn't in an issue, you
+should make an issue for that before you start working on it.
 
-When you start work on a new story, you should create a
-feature branch for that story, and commit your work on that
-story to that branch. Commit messages should refer to that
-story (by number, e.g., `Issue #8`) so GitHub can auto-link
+When you start work on a new issue, you should create a
+feature branch for that issue, and commit your work on that
+issue to that branch. Commit messages should refer to that
+issue (by number, e.g., `Issue #8`) so GitHub can auto-link
 the commits to that issue for you.
 
-When you feel like a story is complete
+When you feel like an issue is complete
 
 * Move that card to the Review/QA track
 * Issue a Pull Request (_we'll have to talk about this in lab_) from your feature branch onto your master branch
 
-Then step away from that story for a while,
+Then step away from that issue for a while,
 either by working on a different part of the lab, or by
 doing something unrelated to Software Design. Then come back
 back to that _as a team_ and review the requirements
-described in the story and compare them to the functionality
-you implemented. Is the story _done done_? Are there solid
+described in the issue and compare them to the functionality
+you implemented. Is the issue _done done_? Are there solid
 and complete tests that back up the work? Can you break it?
 Have you tried? Would you bet your career (or at least your
 next raise) on this working in a customer demo or out in the
 field?
 
-If you find issues, document them, either in the existing
-story, or through new stories. Then go back to working in
-the feature branch for that story, and repeat the whole
+If you find bugs, document them, either in the existing issue, or through new issues. Then go back to working in
+the feature branch for that issue, and repeat the whole
 process.
 
-Once the story passes review, you should
+Once the issue passes review, you should
 
 * Merge the associated feature branch into master by accepting the (perhaps modified) pull request
-* Move the story to the Done or Closed track as you see fit
+* Move the issue to the Done or Closed track as you see fit
 
 ## The epics/features
 
