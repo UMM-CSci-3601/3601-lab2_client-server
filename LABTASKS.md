@@ -69,7 +69,7 @@ untested. We think we could use
 to provide coverage of the `Server` class, but we haven't tried that
 yet. (You can, though. 😄)
 
-### Using Thunder Client
+### Use Thunder Client to explore API output
 
 Thunder Client is a tool for debugging the server API output from VSCode. 
 It aids in checking what the server gives us when we make requests to it, which can be 
