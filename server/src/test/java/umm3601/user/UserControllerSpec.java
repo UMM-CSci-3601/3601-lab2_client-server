@@ -86,6 +86,8 @@ public class UserControllerSpec {
     for (User user : argument.getValue()) {
       assertEquals(25, user.age);
     }
+    // Confirm that there are 2 users with age 25
+    assertEquals(2, argument.getValue().length);
   }
 
   /**
