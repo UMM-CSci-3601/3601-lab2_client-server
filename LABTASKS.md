@@ -3,8 +3,7 @@
 - [Notes on notation and structure](#notes-on-notation-and-structure)
 - [Exploring the project](#exploring-the-project)
 - [Exploring the server](#exploring-the-server)
-  - [Using Thunder Client](#using-thunder-client)
-    - [Usage](#usage)
+  - [Use Thunder Client to explore API output](#use-thunder-client-to-explore-api-output)
 - [Exploring the client](#exploring-the-client)
 - [Use ZenHub to support Agile development](#use-zenhub-to-support-agile-development)
   - [Setting up the project ZenHub board](#setting-up-the-project-zenhub-board)
@@ -69,15 +68,14 @@ untested. We think we could use
 to provide coverage of the `Server` class, but we haven't tried that
 yet. (You can, though. 😄)
 
-### Using Thunder Client
+### Use Thunder Client to explore API output
 
-Thunder client is a tool for debugging the server API output from VSCode. 
+Thunder Client is a tool for debugging the server API output from VSCode. 
 It aids in checking what the server gives us when we make requests to it, which can be 
 really helpful when you're trying to debug what your server gives you.
 
-#### Usage
 
-To use Thunderclient (once it's installed), open it from the sidebar.
+To use Thunder Client (once it's installed), open it from the sidebar. 
 The icon is a circle with a lightning bolt in the middle.
 ![Thunder client icon](https://user-images.githubusercontent.com/32685970/214179360-2ab176da-dc4f-43f8-8519-4ade1660ef89.png)
 This should add a button in the top of the sidebar labelled `New Request`, click it.
