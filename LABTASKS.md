@@ -85,8 +85,8 @@ This should add a button in the top of the sidebar labelled `New Request`, click
 ![Thunder client startup screen](https://user-images.githubusercontent.com/32685970/214179462-d89c738c-7ab3-4ede-99a8-a3c240169884.png)
 
 This should open a window with two columns. In the top of the left column,
-there should be a URL bar with a url, (by default, it's https://www.thunderclient.com/welcome). 
-Change that to http://localhost:4567/api/\<the-route-you-want-to-test\> (ie. http://localhost:4567/api/users), then press send.
+there should be a URL bar with a url, (by default, it's `https://www.thunderclient.com/welcome`). 
+Change that to `http://localhost:4567/api/<the-route-you-want-to-test>` (ie. `http://localhost:4567/api/users`), then press send.
 
 ![Thunder client usage](https://user-images.githubusercontent.com/32685970/214179602-528f347b-b825-4446-9c91-d6671d8ad0bb.png)
 
