@@ -77,12 +77,15 @@ really helpful when you're trying to debug what your server gives you.
 
 #### Usage
 
-To use Thunderclient (once it's installed), open it from the sidebar. 
+To use Thunderclient (once it's installed), open it from the sidebar.
 The icon is a circle with a lightning bolt in the middle.
-This should add a button in the top of the sidebar labelled `New Request`, click it.  
+![Thunder client icon](https://user-images.githubusercontent.com/32685970/214179360-2ab176da-dc4f-43f8-8519-4ade1660ef89.png)
+This should add a button in the top of the sidebar labelled `New Request`, click it.
+![Thunder client startup screen](https://user-images.githubusercontent.com/32685970/214179462-d89c738c-7ab3-4ede-99a8-a3c240169884.png)
 This should open a window with two columns. In the top of the left column,
 there should be a URL bar with a url, (by default, it's https://www.thunderclient.com/welcome). 
-Change that to https://localhost:4567/api/<the-route-you-want-to-test>, then press send. 
+Change that to http://localhost:4567/api/<the-route-you-want-to-test>, then press send.
+![Thunder client usage](https://user-images.githubusercontent.com/32685970/214179602-528f347b-b825-4446-9c91-d6671d8ad0bb.png)
 The response will be on the right column. You can also change the query parameters from this window.
 
 ## Exploring the client
