@@ -4,8 +4,8 @@
 - [Exploring the project](#exploring-the-project)
 - [Exploring the server](#exploring-the-server)
 - [Exploring the client](#exploring-the-client)
-- [Use ZenHub to support Agile development](#use-zenhub-to-support-agile-development)
-  - [Setting up the project ZenHub board](#setting-up-the-project-zenhub-board)
+- [Use GitHub Projects to support Agile development](#use-github-projects-to-support-agile-development)
+  - [Setting up the GitHub Projects board](#setting-up-the-github-projects-board)
   - [Using the board](#using-the-board)
 - [The epics/features](#the-epicsfeatures)
 - [Questions](#questions)
@@ -75,21 +75,21 @@ construct the _very_ simple client-side web app.
 
 :question: Answer questions *6* and *7* and *8* [QUESTIONS](./LABTASKS.md#questions)
 
-## Use ZenHub to support Agile development
+## Use GitHub Projects to support Agile development
 
-We'll be using ZenHub to augment the standard GitHub issues
+We'll be using GitHub Projects to augment the standard GitHub issues
 system with nifty powers to aid in Agile estimating,
 planning, tracking, and development. The next two sections
 describe the software development tasks you need to complete
 for this lab, which all take the form of augmenting the server API with new functionality.
 
-### Setting up the project ZenHub board
+### Setting up the GitHub Projects board
 
-So before you actually start _coding_ on any of that, you
-should spend some time using ZenHub to capture and estimate
+So before you actually start _coding_ on any part of the lab, you
+should spend some time using issues and GitHub Projects to capture and estimate
 issues and do some planning.
 
-* Make sure you've turned on [ZenHub](http://zenhub.com) so it works :smile:
+* Make sure you've turned on GitHub Projects for this lab in your repository so it works :smile:
 * Create at least one epic that starts on the first day of lab and ends when the lab is due
   * If you want to break the lab period into smaller time boxes and have multiple, smaller
     epics, that would be OK as well. If you do this, make sure you provide
@@ -107,10 +107,11 @@ together "slice the cake":
 >
 >* Implementing the server-side functionality, e.g., adding support for a new API endpoint
      to the Javalin server code.
->* Adding the client-side functionality that allows users to access that new server-side work.
+>* Adding the client-side functionality that allows users to access that new server-side work, e.g., 
+     adding elements to the website that allow a user to find todos with certain filters activated.
 >
->Here, however, we've provided you with a fully functional client, so you won't do any
-work on the client side in this lab. So you won't really slice the cake here, but you should
+>Here, however, we've provided you with a fully functional client, so you won't need to do any
+work on the client side in this lab. So you won't *really* slice the cake here, but you should
 be aware that it will be important in the future for your issues to fully slice the cake.
 
 :warning: One thing you should **not** do is create separate tasks for things like unit tests
@@ -150,7 +151,7 @@ the commits to that issue for you.
 When you feel like an issue is complete
 
 * Move that card to the Review/QA track
-* Issue a Pull Request (_we'll have to talk about this in lab_) from your feature branch onto your master branch
+* Issue a Pull Request from your feature branch onto your master branch
 
 Then step away from that issue for a while,
 either by working on a different part of the lab, or by
