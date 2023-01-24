@@ -110,39 +110,54 @@ for this lab, which all take the form of augmenting the server API with new func
 
 ### Setting up the GitHub Projects board
 
-So before you actually start _coding_ on any part of the lab, you
+Before you actually start _coding_ on any part of the lab, you
 should spend some time using issues and GitHub Projects to capture and estimate
 issues and do some planning.
 
-* Make sure you've turned on GitHub Projects for this lab in your repository so it works :smile:
-* Create at least one epic that starts on the first day of lab and ends when the lab is due
-  * If you want to break the lab period into smaller time boxes and have multiple, smaller
-    epics, that would be OK as well. If you do this, make sure you provide
-    reasonable start and end dates so one follows on from the
-    other, and the first starts at the beginning of the lab
-    and the last ends when the lab is due.
+1. Go to the `Issues` tab for your repository
+2. Near the green `New issue` button, there is a button-like thing that says `Milestones` (click it)
+3.  Click the green `New milestone` button
+4.  Create a milestone for the lab that uses the lab's due date
+    1.  If you'd like to make multiple, smaller milestones, you may do so
+    2.  You can write in other information if you'd like, but at least include the one milestone for the lab's due date
 
-Now you'll need to create several epics, one for each major feature described below.
-(See ["Working with Epics inside GitHub"](https://www.zenhub.com/blog/working-with-epics-in-github/)
-for info on creating and working with epics in ZenHub.) For each epic you should add the issues
-(tasks) that you think you'll need to complete to provide a full version of this feature.
+Once you have created a milestone, you will be ready to create a GitHub Projects board to act as your visual workspace that is connected to your GitHub repository.
 
->In future labs and the project, implementing most epics will have at least two parts that
-together "slice the cake":
+
+>In future labs and the project, you'll need to create several epics, one for each major feature; implementing most epics will have at least two parts that together "slice the cake":
 >
 >* Implementing the server-side functionality, e.g., adding support for a new API endpoint
      to the Javalin server code.
 >* Adding the client-side functionality that allows users to access that new server-side work, e.g., 
      adding elements to the website that allow a user to find todos with certain filters activated.
 >
->Here, however, we've provided you with a fully functional client, so you won't need to do any
-work on the client side in this lab. So you won't *really* slice the cake here, but you should
-be aware that it will be important in the future for your issues to fully slice the cake.
-
-:warning: One thing you should **not** do is create separate tasks for things like unit tests
+>Since we've provided you with a fully functional client, you won't need to do any
+work on the client side in this lab, so you won't *really* slice the cake here, but you should
+be aware that it will be important in the future for your issues to fully slice the cake. In the future, for each epic you should add the issues (tasks) that you think you'll need to complete to provide a full version of this feature. We will give you instructions about how to do that for future labs.
+>
+>:warning: One thing you should **not** do is create separate tasks for things like unit tests
 or refactoring. Those activities should be "baked in" to your work flow, and not considered
 separate (and therefore to some degree optional) activities.
 
+5. Click the `Projects` tab on your GitHub repository
+6. Use the green dropdown by the button to make that button read `New project` (then, click `New project`)
+7. In the popup dialog, choose the last option `Feature` (has a little wrench by it) and then click the green `Create` button
+
+The view that you see will have several columns: Title, Assignees, Status, Iteration, Estimate, Linked pull requests, and Labels. There is an option to add more columns, and I'd like you to add a column for `Milestone`.
+
+1. I suggest choosing the  `Current iteration` tab and removing the columns for `Ready`. I think that 5 columns is plenty to describe the state of elements of the lab.
+2. Go back to the `Home` tab for the project
+3.  For each of the features (and additional features) listed below, add an entry to your project as follows:
+    1. Click or use control space to start typing the name of the issue/feature
+    2. For `Assignees`, you can leave it blank or select your team members
+    3. `Status` will tell which column to put this in (I suggest "Backlog")
+    4. For `Iteration`, select the current iteration
+    5. For `Estimate`, you can leave that blank for now or make an estimate now
+    6. There are not linked PRs right now
+    7. When you get to the `Labels` column, there is an option to convert the item to an issue. Select your repository and do that conversion.
+    8. In the `Milestone` column, select the appropriate milestone (probably the lab's due date, but maybe you added more options)
+
+If you haven't already assigned estimates as you went along, now is a good time to think about how difficult you think each task will be and put estimates on each issue.
 Once you've created and estimated all the issues, you
 should think about which ones you think you can reasonably
 do in this lab. This could be all of them, but it doesn't
@@ -152,9 +167,7 @@ the set of issues you expect to complete in this epic
 _increase_ rather than _decrease_, so being conservative in
 your initial planning is probably a Good Thing.
 
-* You should add the issues that you _expect_ to do in the lab to your epic.
-* You should move the issues you expect to do into the Backlog track, and move all the
-  other issues into the Icebox track.
+* You should move the issues you don't expect to do into the `New` track (this is often called `Icebox`, but by default it's called `New` here, so I'm going with that), and move all the other issues into the `Backlog` track. Now, you are ready to get started working on the coding part of this lab!
 
 ### Using the board
 
@@ -175,7 +188,7 @@ the commits to that issue for you.
 
 When you feel like an issue is complete
 
-* Move that card to the Review/QA track
+* Move that card to the `In review` track
 * Issue a Pull Request from your feature branch onto your master branch
 
 Then step away from that issue for a while,
@@ -196,7 +209,8 @@ process.
 Once the issue passes review, you should
 
 * Merge the associated feature branch into master by accepting the (perhaps modified) pull request
-* Move the issue to the Done or Closed track as you see fit
+* Move the issue to the `Done` track (or, fee free to create more tracks as you see fit)
+* There are ways to automate the moves through the tracks based on what's happening in GitHub, but we won't look at that in detail for this lab.
 
 ## The epics/features
 
@@ -269,7 +283,7 @@ api/todos?owner=Blanche&status=complete&limit=12&orderBy=category
 ```
 
 which would return the first 12 completed to-dos owned by
-Blanche ordered by category.
+Blanche ordered by category. Make sure you do the limiting step last so you don't miss any items.
 
 Each of these if implemented properly should work in the provided client.
 
