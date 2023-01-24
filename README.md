@@ -4,7 +4,7 @@
 
 - [Overview of the project](#overview-of-the-project)
 - [Setup](#setup)
-  - [Cloning the project in GitKraken](#cloning-the-project-in-gitkraken)
+  - [Clone the project in GitKraken](#clone-the-project-in-gitkraken)
   - [Open the project in VS Code](#open-the-project-in-vs-code)
   - [JSON viewer browser extension](#json-viewer-browser-extension)
 - [Running Your project](#running-your-project)
@@ -81,7 +81,7 @@ The details of both of these components are in [LABTASKS.md](./LABTASKS.md).
 
 ## Setup
 
-### Cloning the project in GitKraken
+### Clone the project in GitKraken
 
 1. First, Open [GitKraken][gitkraken]. If you already have a project open, close it or open a new tab.
 2. Click "Clone a repo", select "GitHub.com" and find this repo in "Repository to Clone"
