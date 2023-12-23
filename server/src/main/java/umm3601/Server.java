@@ -14,13 +14,14 @@ public class Server {
   public static final String CLIENT_DIRECTORY = "../client";
   public static final String USER_DATA_FILE = "/users.json";
   private static UserDatabase userDatabase;
+  private static Javalin server;
 
   public static void main(String[] args) {
 
     // Initialize dependencies
     UserController userController = buildUserController();
 
-    Javalin server = Javalin.create(config -> {
+    server = Javalin.create(config -> {
       // This tells the server where to look for static files,
       // like HTML and JavaScript.
       config.staticFiles.add(CLIENT_DIRECTORY, Location.EXTERNAL);
@@ -45,6 +46,10 @@ public class Server {
 
     // List users, filtered using query parameters
     server.get("/api/users", userController::getUsers);
+  }
+
+  public static void stopServer() {
+    server.stop();
   }
 
   /***
