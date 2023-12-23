@@ -3,9 +3,10 @@
 - [Notes on notation and structure](#notes-on-notation-and-structure)
 - [Exploring the project](#exploring-the-project)
 - [Exploring the server](#exploring-the-server)
+  - [Use Thunder Client to explore API output](#use-thunder-client-to-explore-api-output)
 - [Exploring the client](#exploring-the-client)
-- [Use ZenHub to support Agile development](#use-zenhub-to-support-agile-development)
-  - [Setting up the project ZenHub board](#setting-up-the-project-zenhub-board)
+- [Use GitHub Projects to support Agile development](#use-github-projects-to-support-agile-development)
+  - [Setting up the GitHub Projects board](#setting-up-the-github-projects-board)
   - [Using the board](#using-the-board)
 - [The epics/features](#the-epicsfeatures)
 - [Questions](#questions)
@@ -67,6 +68,30 @@ untested. We think we could use
 to provide coverage of the `Server` class, but we haven't tried that
 yet. (You can, though. 😄)
 
+### Use Thunder Client to explore API output
+
+Thunder Client is a tool for debugging the server API output from VSCode. 
+It aids in checking what the server gives us when we make requests to it, which can be 
+really helpful when you're trying to debug what your server gives you.
+
+
+To use Thunder Client (once it's installed), open it from the sidebar. 
+The icon is a circle with a lightning bolt in the middle.
+
+<img src = "https://user-images.githubusercontent.com/32685970/214179360-2ab176da-dc4f-43f8-8519-4ade1660ef89.png" height = 300 />
+
+This should add a button in the top of the sidebar labelled `New Request`, click it.
+
+![Thunder client startup screen](https://user-images.githubusercontent.com/32685970/214179462-d89c738c-7ab3-4ede-99a8-a3c240169884.png)
+
+This should open a window with two columns. In the top of the left column,
+there should be a URL bar with a url, (by default, it's `https://www.thunderclient.com/welcome`). 
+Change that to `http://localhost:4567/api/<the-route-you-want-to-test>` (ie. `http://localhost:4567/api/users`), then press send.
+
+![Thunder client usage](https://user-images.githubusercontent.com/32685970/214179602-528f347b-b825-4446-9c91-d6671d8ad0bb.png)
+
+The response will be on the right column. You can also change the query parameters from this window.
+
 ## Exploring the client
 
 The client resources are in `client`, which
@@ -75,60 +100,74 @@ construct the _very_ simple client-side web app.
 
 :question: Answer questions *6* and *7* and *8* [QUESTIONS](./LABTASKS.md#questions)
 
-## Use ZenHub to support Agile development
+## Use GitHub Projects to support Agile development
 
-We'll be using ZenHub to augment the standard GitHub issues
+We'll be using GitHub Projects to augment the standard GitHub issues
 system with nifty powers to aid in Agile estimating,
 planning, tracking, and development. The next two sections
 describe the software development tasks you need to complete
 for this lab, which all take the form of augmenting the server API with new functionality.
 
-### Setting up the project ZenHub board
+### Setting up the GitHub Projects board
 
-So before you actually start _coding_ on any of that, you
-should spend some time using ZenHub to capture and estimate
-stories and do some planning.
+Before you actually start _coding_ on any part of the lab, you
+should spend some time using issues and GitHub Projects to capture and estimate
+issues and do some planning.
 
-* Make sure you've turned on [ZenHub](http://zenhub.com) so it works :smile:
-* Create at least one Milestone that starts on the first day of lab and ends when the lab is due
-  * If you want to break the lab period into smaller time boxes and have multiple, smaller
-    Milestones, that would be OK as well. If you do this, make sure you provide
-    reasonable start and end dates so one follows on from the
-    other, and the first starts at the beginning of the lab
-    and the last ends when the lab is due.
+1. Go to the `Issues` tab for your repository
+2. Near the green `New issue` button, there is a button-like thing that says `Milestones` (click it)
+3.  Click the green `New milestone` button
+4.  Create a milestone for the lab that uses the lab's due date
+    1.  If you'd like to make multiple, smaller milestones, you may do so
+    2.  You can write in other information if you'd like, but at least include the one milestone for the lab's due date
 
-Now you'll need to create several _epics_, one for each major feature described below.
-(See ["Working with Epics inside GitHub"](https://www.zenhub.com/blog/working-with-epics-in-github/)
-for info on creating and working with epics in ZenHub.) For each epic you should add the issues
-(tasks) that you think you'll need to complete to provide a full version of this feature.
+Once you have created a milestone, you will be ready to create a GitHub Projects board to act as your visual workspace that is connected to your GitHub repository.
 
->In future labs and the project, implementing most epics will have at least two parts that
-together "slice the cake":
+
+>In future labs and the project, you'll need to create several epics, one for each major feature; implementing most epics will have at least two parts that together "slice the cake":
 >
 >* Implementing the server-side functionality, e.g., adding support for a new API endpoint
      to the Javalin server code.
->* Adding the client-side functionality that allows users to access that new server-side work.
+>* Adding the client-side functionality that allows users to access that new server-side work, e.g., 
+     adding elements to the website that allow a user to find todos with certain filters activated.
 >
->Here, however, we've provided you with a fully functional client, so you won't do any
-work on the client side in this lab. So you won't really slice the cake here, but you should
-be aware that it will be important in the future for your stories to fully slice the cake.
-
-:warning: One thing you should **not** do is create separate tasks for things like unit tests
+>Since we've provided you with a fully functional client, you won't need to do any
+work on the client side in this lab, so you won't *really* slice the cake here, but you should
+be aware that it will be important in the future for your issues to fully slice the cake. In the future, for each epic you should add the issues (tasks) that you think you'll need to complete to provide a full version of this feature. We will give you instructions about how to do that for future labs.
+>
+>:warning: One thing you should **not** do is create separate tasks for things like unit tests
 or refactoring. Those activities should be "baked in" to your work flow, and not considered
 separate (and therefore to some degree optional) activities.
 
-Once you've created and estimated all the stories, you
+5. Click the `Projects` tab on your GitHub repository
+6. Use the green dropdown by the button to make that button read `New project` (then, click `New project`)
+7. In the popup dialog, choose the last option `Feature` (has a little wrench by it) and then click the green `Create` button
+
+The view that you see will have several columns: Title, Assignees, Status, Iteration, Estimate, Linked pull requests, and Labels. There is an option to add more columns, and I'd like you to add a column for `Milestone`.
+
+1. I suggest choosing the  `Current iteration` tab and removing the columns for `Ready`. I think that 5 columns is plenty to describe the state of elements of the lab.
+2. Go back to the `Home` tab for the project
+3.  For each of the features (and additional features) listed below, add an entry to your project as follows:
+    1. Click or use control space to start typing the name of the issue/feature
+    2. For `Assignees`, you can leave it blank or select your team members
+    3. `Status` will tell which column to put this in (I suggest "Backlog")
+    4. For `Iteration`, select the current iteration
+    5. For `Estimate`, you can leave that blank for now or make an estimate now
+    6. There are not linked PRs right now
+    7. When you get to the `Labels` column, there is an option to convert the item to an issue. Select your repository and do that conversion.
+    8. In the `Milestone` column, select the appropriate milestone (probably the lab's due date, but maybe you added more options)
+
+If you haven't already assigned estimates as you went along, now is a good time to think about how difficult you think each task will be and put estimates on each issue.
+Once you've created and estimated all the issues, you
 should think about which ones you think you can reasonably
 do in this lab. This could be all of them, but it doesn't
-have to be. You can always add stories to this Milestone as
+have to be. You can always add issues to this epic as
 things progress, and in general customers would rather see
-the set of stories you expect to complete in this Milestone
+the set of issues you expect to complete in this epic
 _increase_ rather than _decrease_, so being conservative in
 your initial planning is probably a Good Thing.
 
-* You should add the stories that you _expect_ to do in the lab to your Milestone.
-* You should move the stories you expect to do into the Backlog track, and move all the
-  other stories into the Icebox track.
+* You should move the issues you don't expect to do into the `New` track (this is often called `Icebox`, but by default it's called `New` here, so I'm going with that), and move all the other issues into the `Backlog` track. Now, you are ready to get started working on the coding part of this lab!
 
 ### Using the board
 
@@ -137,41 +176,41 @@ lab, using it to guide your decisions about what to work on,
 updating issues as you make progress, etc.
 
 Whenever you sit down to work on the project, you should be
-clearly working on a specific story. If you feel like there's
-something that _needs_ to be done but isn't in a story/issue, you
-should make a story for that before you start working on it.
+clearly working on a specific issue. If you feel like there's
+something that _needs_ to be done but isn't in an issue, you
+should make an issue for that before you start working on it.
 
-When you start work on a new story, you should create a
-feature branch for that story, and commit your work on that
-story to that branch. Commit messages should refer to that
-story (by number, e.g., `Issue #8`) so GitHub can auto-link
+When you start work on a new issue, you should create a
+feature branch for that issue, and commit your work on that
+issue to that branch. Commit messages should refer to that
+issue (by number, e.g., `Issue #8`) so GitHub can auto-link
 the commits to that issue for you.
 
-When you feel like a story is complete
+When you feel like an issue is complete
 
-* Move that card to the Review/QA track
-* Issue a Pull Request (_we'll have to talk about this in lab_) from your feature branch onto your master branch
+* Move that card to the `In review` track
+* Issue a Pull Request from your feature branch onto your master branch
 
-Then step away from that story for a while,
+Then step away from that issue for a while,
 either by working on a different part of the lab, or by
 doing something unrelated to Software Design. Then come back
 back to that _as a team_ and review the requirements
-described in the story and compare them to the functionality
-you implemented. Is the story _done done_? Are there solid
+described in the issue and compare them to the functionality
+you implemented. Is the issue _done done_? Are there solid
 and complete tests that back up the work? Can you break it?
 Have you tried? Would you bet your career (or at least your
 next raise) on this working in a customer demo or out in the
 field?
 
-If you find issues, document them, either in the existing
-story, or through new stories. Then go back to working in
-the feature branch for that story, and repeat the whole
+If you find bugs, document them, either in the existing issue, or through new issues. Then go back to working in
+the feature branch for that issue, and repeat the whole
 process.
 
-Once the story passes review, you should
+Once the issue passes review, you should
 
 * Merge the associated feature branch into master by accepting the (perhaps modified) pull request
-* Move the story to the Done or Closed track as you see fit
+* Move the issue to the `Done` track (or, fee free to create more tracks as you see fit)
+* There are ways to automate the moves through the tracks based on what's happening in GitHub, but we won't look at that in detail for this lab.
 
 ## The epics/features
 
@@ -244,7 +283,7 @@ api/todos?owner=Blanche&status=complete&limit=12&orderBy=category
 ```
 
 which would return the first 12 completed to-dos owned by
-Blanche ordered by category.
+Blanche ordered by category. Make sure you do the limiting step last so you don't miss any items.
 
 Each of these if implemented properly should work in the provided client.
 

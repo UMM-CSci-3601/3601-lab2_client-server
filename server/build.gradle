@@ -34,22 +34,22 @@ mainClassName = 'umm3601.Server'
 dependencies {
 
   // Javalin, a simple web framework for Java
-  implementation 'io.javalin:javalin:4.3.0'
+  implementation 'io.javalin:javalin:5.3.2'
 
   // Jackson, a JSON library for Java
-  implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
 
   // Simple Logging Facade for Java
-  implementation 'org.slf4j:slf4j-simple:1.7.35'
+  implementation 'org.slf4j:slf4j-simple:2.0.6'
 
   // JUnit Jupiter API for testing.
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
 
   // JUnit Jupiter Engine for testing.
-  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 
   // Mockito for testing
-  testImplementation 'org.mockito:mockito-core:4.3.1'
+  testImplementation 'org.mockito:mockito-core:5.1.1'
 
   // Unirest for testing
   testImplementation 'com.konghq:unirest-java:3.11.09'

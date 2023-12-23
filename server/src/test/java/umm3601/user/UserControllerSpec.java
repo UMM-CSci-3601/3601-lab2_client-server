@@ -18,7 +18,7 @@ import org.mockito.ArgumentCaptor;
 
 import io.javalin.http.BadRequestResponse;
 import io.javalin.http.Context;
-import io.javalin.http.HttpCode;
+import io.javalin.http.HttpStatus;
 import io.javalin.http.NotFoundResponse;
 
 import umm3601.Server;
@@ -45,8 +45,6 @@ public class UserControllerSpec {
 
   @BeforeEach
   public void setUp() throws IOException {
-    ctx.clearCookieStore();
-
     db = new UserDatabase(Server.USER_DATA_FILE);
     userController = new UserController(db);
   }
@@ -88,6 +86,8 @@ public class UserControllerSpec {
     for (User user : argument.getValue()) {
       assertEquals(25, user.age);
     }
+    // Confirm that there are 2 users with age 25
+    assertEquals(2, argument.getValue().length);
   }
 
   /**
@@ -105,9 +105,10 @@ public class UserControllerSpec {
 
     // This should now throw a `BadRequestResponse` exception because
     // our request has an age that can't be parsed to a number.
-    Assertions.assertThrows(BadRequestResponse.class, () -> {
+    Throwable exception = Assertions.assertThrows(BadRequestResponse.class, () -> {
       userController.getUsers(ctx);
     });
+    assertEquals("Specified age '" + "abc" + "' can't be parsed to an integer", exception.getMessage());
   }
 
   @Test
@@ -143,6 +144,7 @@ public class UserControllerSpec {
       assertEquals(25, user.age);
       assertEquals("OHMNET", user.company);
     }
+    assertEquals(1, argument.getValue().length);
   }
 
   @Test
@@ -155,14 +157,16 @@ public class UserControllerSpec {
     userController.getUser(ctx);
 
     verify(ctx).json(user);
-    verify(ctx).status(HttpCode.OK);
+    verify(ctx).status(HttpStatus.OK);
+    assertEquals("Cervantes Morin", user.name);
   }
 
   @Test
   public void respondsAppropriatelyToRequestForNonexistentId() throws IOException {
     when(ctx.pathParam("id")).thenReturn(null);
-    Assertions.assertThrows(NotFoundResponse.class, () -> {
+    Throwable exception = Assertions.assertThrows(NotFoundResponse.class, () -> {
       userController.getUser(ctx);
     });
+    assertEquals("No user with id " + null + " was found.", exception.getMessage());
   }
 }

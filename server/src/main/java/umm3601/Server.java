@@ -3,7 +3,7 @@ package umm3601;
 import java.io.IOException;
 
 import io.javalin.Javalin;
-import io.javalin.core.util.RouteOverviewPlugin;
+import io.javalin.plugin.bundled.RouteOverviewPlugin;
 import io.javalin.http.staticfiles.Location;
 import umm3601.user.UserDatabase;
 import umm3601.user.UserController;
@@ -24,11 +24,11 @@ public class Server {
     server = Javalin.create(config -> {
       // This tells the server where to look for static files,
       // like HTML and JavaScript.
-      config.addStaticFiles(CLIENT_DIRECTORY, Location.EXTERNAL);
+      config.staticFiles.add(CLIENT_DIRECTORY, Location.EXTERNAL);
       // This adds a Javalin plugin that will list all of the
       // routes/endpoints that we add below on a page reachable
       // via the "/api" path.
-      config.registerPlugin(new RouteOverviewPlugin("/api"));
+      config.plugins.register(new RouteOverviewPlugin("/api"));
       // The next line starts the server listening on port 4567.
     }).start(PORT_NUMBER);
 
