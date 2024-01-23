@@ -3,11 +3,12 @@ package umm3601.user;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import io.javalin.http.NotFoundResponse;
+import umm3601.Controller;
 
 /**
  * Controller that manages requests for info about users.
  */
-public class UserController {
+public class UserController implements Controller {
 
   private UserDatabase userDatabase;
 
@@ -50,4 +51,31 @@ public class UserController {
     ctx.json(users);
   }
 
+  /**
+   * Setup routes for the `user` collection endpoints.
+   *
+   * These endpoints are:
+   * - `GET /api/users?age=NUMBER&company=STRING&name=STRING`
+   * - List users, filtered using query parameters
+   * - `age`, `company`, and `name` are optional query parameters
+   * - `GET /api/users/:id`
+   * - Get the specified user
+   *
+   * GROUPS SHOULD CREATE THEIR OWN CONTROLLER FOR TODOS THAT
+   * IMPLEMENTS THE `Controller` INTERFACE.
+   * You'll then implement the `addRoutes` method for that controller,
+   * which will set up the routes for that data. The `Server#setupRoutes`
+   * method will then call `addRoutes` for each controller, which will
+   * add the routes for that controller's data.
+   *
+   * @param server The Javalin server instance
+   */
+  @Override
+  public void addRoutes(Javalin server) {
+    // Get specific user
+    server.get("/api/users/{id}", this::getUser);
+
+    // List users, filtered using query parameters
+    server.get("/api/users", this::getUsers);
+  }
 }
