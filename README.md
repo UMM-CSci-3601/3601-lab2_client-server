@@ -1,4 +1,4 @@
-# CSCI 3601 Lab #2 - Building a web server in Java with Javalin <!-- omit in toc -->
+# CSci 3601 Lab #2 - Building a web server in Java with Javalin <!-- omit in toc -->
 
 [![Server Build Status](../../actions/workflows/server-gradle.yml/badge.svg)](../../actions/workflows/server-gradle.yml)
 
@@ -71,13 +71,8 @@ list of e-mails in GMail).
 To keep this lab simple, however, you'll just display the "raw" JSON
 that the client receives from the server.
 
-This lab has two components:
-
-* Implement the desired server functionality
-* Implement a simple web client that allows users to
-access that server functionality through HTML forms
-
-The details of both of these components are in [LABTASKS.md](./LABTASKS.md).
+This goal of this lab is to implement the desired server functionality.
+The details are in [LABTASKS.md](./LABTASKS.md).
 
 ## Setup
 
@@ -169,7 +164,7 @@ We have [the JaCoCo (Java Code Coverage) plugin set up in Gradle](https://docs.g
 so you can see how well your tests cover (i.e., exercise) your code. The command
 
 ```bash
-./gradlew test jacocoTestReport
+./gradlew check
 ```
 
 will run the tests followed by the test coverage report generator. This report is a "website" like the one from JUnit above. To see the report open the file in your browser:
@@ -180,17 +175,24 @@ server/build/jacocoHtml/index.html
 
 It will look something like this:
 
-![image](https://user-images.githubusercontent.com/1300395/107262605-5c8ca000-6a06-11eb-9844-f7b5d1265eb2.png)
+![Examples of a Jacoco test coverage report](images/test-coverage.png)
 
 If you generate and look at that report at the start of the lab, you'll see that you start
-with 100% coverage of everything but the `Server.java`
-file, e.g., we're great on all the `user` files.
+with 100% coverage of all the `user` files.
 You'd like to keep it that way, so check your
-code coverage after major stories are finished and look for areas that you're not yet testing.
+code coverage after major stories are finished and look for areas that you're not yet testing. You also want to maintain high test coverage
+as you introduce your `todo` code.
 
-:bangbang: The server file itself currently has 0% coverage, although we think we could
-improve that by using [Javalin's support for functional/integration tests](https://javalin.io/tutorials/testing). You are not obliged to provide any coverage for that. You should make
-sure your tests cover things like your `ToDoController` and the like, though.
+:bangbang: `./gradlew check` will fail (and thus block your ability to
+merge in a pull request)) if your test coverage ever falls below 80%,
+so keep an eye on it and take action if it starts to slide down.
+
+:pushpin: The `Main.java` and `Server.java` files are excluded from
+the test coverage. They're hard to test without actually generating
+HTTP requests, and are mostly configuration rather than "logic", so
+we've chosen to not over-complicate the project with attempts to test
+that code. You are not obliged to provide any coverage for that. You
+should make sure your tests cover things like your `ToDoController` and the like, though.
 
 ## Continuous Integration with GitHub Actions
 
@@ -213,12 +215,12 @@ most of the actual work of the lab is described.
 
 ## Resources
 
-* [Getting started in Javalin](https://javalin.io/documentation#getting-started)
-* [Javalin tutorials](https://javalin.io/tutorials/)
-* [Testing Javalin](https://javalin.io/tutorials/testing)
-* [Mockito testing in Javalin](https://javalin.io/tutorials/mockito-testing)
-* [Best practices for REST interface design][rest-best-practices]
-* [HTTP Status Codes][status-codes]
+- [Getting started in Javalin](https://javalin.io/documentation#getting-started)
+- [Javalin tutorials](https://javalin.io/tutorials/)
+- [Testing Javalin](https://javalin.io/tutorials/testing)
+- [Mockito testing in Javalin](https://javalin.io/tutorials/mockito-testing)
+- [Best practices for REST interface design][rest-best-practices]
+- [HTTP Status Codes][status-codes]
 
 [javalin-io]: https://javalin.io
 [gradle]: https://gradle.org/
