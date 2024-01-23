@@ -41,16 +41,8 @@ public class UserController implements Controller {
   public static UserController buildUserController(String userDataFile) throws IOException {
     UserController userController = null;
 
-    UserDatabase UserDatabase = new UserDatabase(userDataFile);
-    userController = new UserController(UserDatabase);
-    // } catch (IOException e) {
-    // System.err.println("The server failed to load the user data; shutting
-    // down.");
-    // e.printStackTrace(System.err);
-
-    // // Exit from the Java program
-    // System.exit(1);
-    // }
+    UserDatabase userDatabase = new UserDatabase(userDataFile);
+    userController = new UserController(userDatabase);
 
     return userController;
   }
