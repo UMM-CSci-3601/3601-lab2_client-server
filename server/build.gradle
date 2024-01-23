@@ -1,22 +1,21 @@
 // Server side build.gradle
-// Builds the server side of the project
+// Builds and tests the server side of the project
 
 plugins {
   // Apply the application plugin to add support for building a CLI application
   id 'application'
 
-  // Apply the Jacoco plugin to add suppport for JUnit test coverage
-  // reports.
+  // Apply the Jacoco plugin to add suppport for JUnit test coverage reports.
   id 'jacoco'
 
   // Apply the checkstyle plugin to check for appropriate Java code style.
   id 'checkstyle'
 }
 
-// Build and run the project with Java 11
+// Build and run the project with Java 21
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(11)
+    languageVersion = JavaLanguageVersion.of(21)
   }
 }
 
@@ -27,12 +26,8 @@ repositories {
   mavenCentral()
 }
 
-// The class where our server is located
-mainClassName = 'umm3601.Server'
-
 // External dependencies that our application utilizes
 dependencies {
-
   // Javalin, a simple web framework for Java
   implementation 'io.javalin:javalin:5.6.3'
 
@@ -48,8 +43,13 @@ dependencies {
   // JUnit Jupiter Engine for testing.
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
 
+  // JUnit Platform Launcher for testing.
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
   // Mockito for testing
   testImplementation 'org.mockito:mockito-core:5.9.0'
+
+  testImplementation 'com.mockrunner:mockrunner-servlet:2.0.7'
 }
 
 application {
@@ -75,16 +75,16 @@ jacocoTestReport {
     // This isn't strictly necessary, but the default reports
     // location is buried pretty deep in the build directory,
     // so this makes it easier to find.
-    html.destination file("${buildDir}/jacocoHtml")
+    html.outputLocation = file("${buildDir}/jacocoHtml")
   }
 
   afterEvaluate {
-    // This excludes the `Server` class from the coverage report. We don't
-    // have any good way to test the `Server` class directory (we'd have
+    // This excludes the `Main` and `Server` classes from the coverage report. We don't
+    // have any good way to test the `Main` class (we'd have
     // to somehow fake incoming HTTP requests), so we are just
     // leaving it out of the coverage report and the coverage limits.
     classDirectories.setFrom(files(classDirectories.files.collect {
-      fileTree(dir: it, exclude: 'umm3601/Server.class')
+      fileTree(dir: it, exclude: ['umm3601/Main.class', 'umm3601/Server.class'])
     }))
   }
 }
@@ -98,7 +98,7 @@ jacocoTestCoverageVerification {
     rule {
       // We are looking at the entire bundle overall, i.e.,
       // 80% of all instructions across all the Java files
-      // (except Server.java) need to be covered.
+      // (except Main.java) need to be covered.
       element = 'BUNDLE'
 
       // 80% of instructions should be covered
@@ -127,13 +127,13 @@ jacocoTestCoverageVerification {
     }
   }
 
-  // This excludes the `Server` class from coverage verification. We don't
-  // have any good way to test the `Server` class directory (we'd have
+  // This excludes the `Main` class from coverage verification. We don't
+  // have any good way to test the `Main` class (we'd have
   // to somehow fake incoming HTTP requests), so we are just
   // leaving it out of the coverage report and the coverage limits.
   afterEvaluate {
     classDirectories.setFrom(files(classDirectories.files.collect {
-      fileTree(dir: it, exclude: 'umm3601/Server.class')
+      fileTree(dir: it, exclude: ['umm3601/Main.class', 'umm3601/Server.class'])
     }))
   }
 }
