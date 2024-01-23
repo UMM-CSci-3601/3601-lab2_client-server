@@ -3,7 +3,9 @@
     "java.server.launchMode": "Standard",
     "cSpell.words": [
         "Checkstyle",
+        "classpath",
         "Javalin",
-        "OHMNET"
+        "OHMNET",
+        "todos"
     ]
 }
