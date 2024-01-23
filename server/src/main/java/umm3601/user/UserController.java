@@ -9,7 +9,7 @@ import io.javalin.http.NotFoundResponse;
  */
 public class UserController {
 
-  private UserDatabase database;
+  private UserDatabase userDatabase;
 
   /**
    * Construct a controller for users.
@@ -20,8 +20,8 @@ public class UserController {
    *
    * @param database the `Database` containing user data
    */
-  public UserController(UserDatabase database) {
-    this.database = database;
+  public UserController(UserDatabase userDatabase) {
+    this.userDatabase = userDatabase;
   }
 
   /**
@@ -31,7 +31,7 @@ public class UserController {
    */
   public void getUser(Context ctx) {
     String id = ctx.pathParam("id");
-    User user = database.getUser(id);
+    User user = userDatabase.getUser(id);
     if (user != null) {
       ctx.json(user);
       ctx.status(HttpStatus.OK);
@@ -46,7 +46,7 @@ public class UserController {
    * @param ctx a Javalin HTTP context
    */
   public void getUsers(Context ctx) {
-    User[] users = database.listUsers(ctx.queryParamMap());
+    User[] users = userDatabase.listUsers(ctx.queryParamMap());
     ctx.json(users);
   }
 
