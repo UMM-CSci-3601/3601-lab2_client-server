@@ -7,8 +7,11 @@ function getFilteredTodos() {
   if(document.getElementById("owner").value != "") {
     url = url + "&owner=" + getFieldValue("owner");
   }
-  if(document.getElementById("category").value != "") {
-    url = url + "&category=" + getFieldValue("category");
+
+  let checkedCategory = document.querySelector('input[name="category"]:checked').value;
+
+  if (checkedCategory != "") {
+    url = url + "&category=" + checkedCategory;
   }
   if(document.getElementById("status").value != "") {
     url = url + "&status=" + getFieldValue("status");
