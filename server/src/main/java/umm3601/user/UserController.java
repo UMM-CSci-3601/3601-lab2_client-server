@@ -1,5 +1,8 @@
 package umm3601.user;
 
+import java.io.IOException;
+
+import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import io.javalin.http.NotFoundResponse;
@@ -23,6 +26,33 @@ public class UserController implements Controller {
    */
   public UserController(UserDatabase userDatabase) {
     this.userDatabase = userDatabase;
+  }
+
+  /***
+   * Create a database using the json file, use it as data source for a new
+   * UserController
+   *
+   * Constructing the controller might throw an IOException if there are problems
+   * reading from the JSON "database" file. If that happens we'll print out an
+   * error message exit the program.
+   *
+   * @throws IOException
+   */
+  public static UserController buildUserController(String userDataFile) throws IOException {
+    UserController userController = null;
+
+    UserDatabase UserDatabase = new UserDatabase(userDataFile);
+    userController = new UserController(UserDatabase);
+    // } catch (IOException e) {
+    // System.err.println("The server failed to load the user data; shutting
+    // down.");
+    // e.printStackTrace(System.err);
+
+    // // Exit from the Java program
+    // System.exit(1);
+    // }
+
+    return userController;
   }
 
   /**
