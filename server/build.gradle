@@ -67,10 +67,6 @@ test {
   finalizedBy jacocoTestCoverageVerification
 }
 
-wrapper {
-  distributionType = Wrapper.DistributionType.ALL
-}
-
 jacocoTestReport {
   // Running the test report task automatically runs test first
   dependsOn test
@@ -145,4 +141,8 @@ jacocoTestCoverageVerification {
 tasks.withType(JavaCompile) {
   // All of our source files are written in UTF-8
   options.encoding = 'UTF-8'
+}
+
+wrapper {
+  distributionType = Wrapper.DistributionType.ALL
 }
