@@ -297,38 +297,38 @@ Canvas on the assignment for this lab.
 these tools. Don't just tell us _what_ something does, indicate
 _why_ we'd want to have it.
 
-1. [ ] :question: What is the purpose of `.gitignore`?
+- [ ] :question: _1_ What is the purpose of `.gitignore`?
       ([Maybe search for `.gitignore`?](https://www.google.com/search?q=.gitignore))
 
-2. [ ] :question: What role is Gradle playing in the
+- [ ] :question: _2_ What role is Gradle playing in the
       project, and what is the purpose of `build.gradle`?
 
-3. [ ] :question: What is the purpose of Github Actions?
+- [ ] :question: _3_ What is the purpose of Github Actions?
 
-4. [ ] :question: Explain what an _endpoint_ is (also often called a _route_). (You might look at the
+- [ ] :question: _4_ Explain what an _endpoint_ is (also often called a _route_). (You might look at the
       [Javalin](https://javalin.io/documentation#endpoint-handlers)
       documentation for some help here.)
 
-5. [ ] :question: What is the purpose of `umm3601.Server` class?
+- [ ] :question: _5_ What is the purpose of `umm3601.Server` class?
       What is the purpose of the `umm3601.user.UserController` class?
       Explain what happens when a user accesses each of the
       following URLs:
 
-  - [ ] :question: The page `users`
-    - <http://localhost:4567/users.html>
-  - [ ] :question: The page `api/users`
-    - <http://localhost:4567/api/users>
-  - [ ] :question: The page `api/users?age=25`
-    - <http://localhost:4567/api/users?age=25>
-  - [ ] :question: The page `api/users/588935f5de613130e931ffd5`
-    - <http://localhost:4567/api/users/588935f5de613130e931ffd5>
+- [ ] :question: The page `users`
+  - <http://localhost:4567/users.html>
+- [ ] :question: The page `api/users`
+  - <http://localhost:4567/api/users>
+- [ ] :question: The page `api/users?age=25`
+  - <http://localhost:4567/api/users?age=25>
+- [ ] :question: The page `api/users/588935f5de613130e931ffd5`
+  - <http://localhost:4567/api/users/588935f5de613130e931ffd5>
 
 :bangbang: If you have your project running (see the README), these links should
 actually work and generate results from your server.
 
-6. [ ] :question: What is in the `client` folder? What is the purpose of each of the HTML files there?
+- [ ] :question: _6_ What is in the `client` folder? What is the purpose of each of the HTML files there?
 
-7. [ ] :question: Describe what happens when you filter users by
+- [ ] :question: _7_ Describe what happens when you filter users by
       age in the client?
 
   - [ ] What information is read from the web page, and where is it read from?
@@ -336,5 +336,5 @@ actually work and generate results from your server.
   - [ ] What reply does the server send back to the client? How is that constructed?
   - [ ] What is received by the client, and how/where is it displayed?
 
-8. [ ] :question: Where is the client-side JavaScript defined? Name the HTML file(s) that
+- [ ] :question: _8_ Where is the client-side JavaScript defined? Name the HTML file(s) that
       load and use it.
