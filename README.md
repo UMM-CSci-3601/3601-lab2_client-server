@@ -78,10 +78,10 @@ The details are in [LABTASKS.md](./LABTASKS.md).
 
 ### Clone the project in GitKraken
 
-1. First, Open [GitKraken][gitkraken]. If you already have a project open, close it or open a new tab.
-2. Click "Clone a repo", select "GitHub.com" and find this repo in "Repository to Clone"
-3. Select where to put it and clone it
-4. You can then click "Open Repo" from the notification that appears to open the repo
+1. [ ] First, Open [GitKraken][gitkraken]. If you already have a project open, close it or open a new tab.
+2. [ ] Click "Clone a repo", select "GitHub.com" and find this repo in "Repository to Clone"
+3. [ ] Select where to put it and clone it
+4. [ ] You can then click "Open Repo" from the notification that appears to open the repo
 
 ### Open the project in VS Code
 
