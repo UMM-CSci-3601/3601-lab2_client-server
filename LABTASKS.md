@@ -313,15 +313,15 @@ _why_ we'd want to have it.
       What is the purpose of the `umm3601.user.UserController` class?
       Explain what happens when a user accesses each of the
       following URLs:
-
-- [ ] :question: The page `users`
-  - <http://localhost:4567/users.html>
-- [ ] :question: The page `api/users`
-  - <http://localhost:4567/api/users>
-- [ ] :question: The page `api/users?age=25`
-  - <http://localhost:4567/api/users?age=25>
-- [ ] :question: The page `api/users/588935f5de613130e931ffd5`
-  - <http://localhost:4567/api/users/588935f5de613130e931ffd5>
+  
+  - [ ] :question: The page `users`
+    - <http://localhost:4567/users.html>
+  - [ ] :question: The page `api/users`
+    - <http://localhost:4567/api/users>
+  - [ ] :question: The page `api/users?age=25`
+    - <http://localhost:4567/api/users?age=25>
+  - [ ] :question: The page `api/users/588935f5de613130e931ffd5`
+    - <http://localhost:4567/api/users/588935f5de613130e931ffd5>
 
 :bangbang: If you have your project running (see the README), these links should
 actually work and generate results from your server.
