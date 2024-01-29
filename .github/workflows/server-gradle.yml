@@ -1,6 +1,6 @@
 name: Server Java
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   gradle-build:
