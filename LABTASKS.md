@@ -120,13 +120,11 @@ Once you have created a milestone, you will be ready to create a GitHub Projects
 > In future labs and the project, you'll need to create several epics, one for each major feature; implementing most epics will have at least two parts that together "slice the cake":
 >
 > - Implementing the server-side functionality, e.g., adding support for a new API endpoint
-
-     to the Javalin server code.
-
+>     to the Javalin server code.
+>
 > - Adding the client-side functionality that allows users to access that new server-side work, e.g.,
-
-     adding elements to the website that allow a user to find todos with certain filters activated.
-
+>     adding elements to the website that allow a user to find todos with certain filters activated.
+>
 > Since we've provided you with a fully functional client, you won't need to do any
 > work on the client side in this lab, so you won't _really_ slice the cake here, but you should
 > be aware that it will be important in the future for your issues to fully slice the cake. In the future, for each epic you should add the issues (tasks) that you think you'll need to complete to provide a full version of this feature. We will give you instructions about how to do that for future labs.
@@ -234,36 +232,36 @@ create an epic for each of the features listed below, adding at issues as approp
 At the very least (necessary to get 85% of this part of the lab)
 you should implement (and create meaningful server-side tests for) the following features:
 
-- [ ] List all the todos
+- List all the todos
   - [ ] Implement an `api/todos` server-side endpoint, which returns all the to-dos
-- [ ] List a single todo by ID
+- List a single todo by ID
   - [ ] Implement an `api/todos/58895985c1849992336c219b` server-side endpoint, which
         returns the single todo with the given `_id`. It should return a 404
         (use the Javalin `NotFoundResponse` class) if there is no todo with the
         specified `_id`.
-- [ ] Support limiting the number of todos that are displayed
+- Support limiting the number of todos that are displayed
   - [ ] Implement an `api/todos?limit=7` API endpoint, which lets you specify the maximum
         number of todos that the server returns.
-- [ ] Support filtering todos by their status (either complete or incomplete)
+- Support filtering todos by their status (either complete or incomplete)
   - [ ] Implement an `api/todos?status=complete` (or `incomplete`) endpoint which lets you
         filter the todos and only return the complete (or incomplete) ones
   - [ ] Note that the "database" stores the status as a boolean, but the endpoint uses
         "complete" and "incomplete". You'll have to implement the (simple) logic that
         transforms the endpoint "language" into the database terminology.
-- [ ] Support searching for todos whose _bodies_ contain a given string
+- Support searching for todos whose _bodies_ contain a given string
   - [ ] Implement an `api/todos?contains=banana` endpoint which lets you search for to-dos
         whose _bodies_ contain (anywhere) the given string (in this case "banana").
 
 To get full (100%) credit on this part of the lab you should
 implement (and create meaningful tests for) these additional features:
 
-- [ ] Filter todos by owner
+- Filter todos by owner
   - [ ] Implement the endpoint `api/todos?owner=Blanche` which returns just the to-dos
         owned by Blanche
-- [ ] Filter todos by category
+- Filter todos by category
   - [ ] Implement the endpoint `api/todos?category=groceries` which returns just the to-dos
         in the `groceries` category
-- [ ] Allow for ordering/sorting of todos by a particular attribute
+- Allow for ordering/sorting of todos by a particular attribute
   - [ ] Implement the endpoint `api/todos?orderBy=owner` (or `body`, `status`, or `category`)
         which sorts the returned to-dos alphabetically by the specified field
 
@@ -313,7 +311,7 @@ _why_ we'd want to have it.
       What is the purpose of the `umm3601.user.UserController` class?
       Explain what happens when a user accesses each of the
       following URLs:
-  
+
   - [ ] :question: The page `users`
     - <http://localhost:4567/users.html>
   - [ ] :question: The page `api/users`
