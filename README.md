@@ -10,6 +10,7 @@
 - [Running Your project](#running-your-project)
 - [Testing Your Project](#testing-your-project)
 - [Checking your code coverage](#checking-your-code-coverage)
+- [Live updates for Gradle test or run](#live-updates-for-gradle-test-or-run)
 - [Continuous Integration with GitHub Actions](#continuous-integration-with-github-actions)
 - [Go do the lab!](#go-do-the-lab)
 - [Resources](#resources)
@@ -125,8 +126,11 @@ From the server directory you can use Gradle to run the server:
 
 Your server should now be running on port 4567, the port we've configured Javalin to
 run on.
-Visit it at [http://localhost:4567][local] in your web browser. The
-server will continue to run indefinitely until you stop it
+Visit it at [http://localhost:4567][local] in your web browser.
+
+The server will continue to run indefinitely until you stop it. You can
+stop it by typing `Control-C` (often written `^C`) in the terminal where
+it's running.
 
 ## Testing Your Project
 
@@ -193,6 +197,24 @@ HTTP requests, and are mostly configuration rather than "logic", so
 we've chosen to not over-complicate the project with attempts to test
 that code. You are not obliged to provide any coverage for that. You
 should make sure your tests cover things like your `ToDoController` and the like, though.
+
+## Live updates for Gradle test or run
+
+By default, if you're running the server with `./gradlew run` and make changes
+to your Java code, you have to stop the server (with `^C`) and restart it for
+those changes to take effect. Similarly, if you make changes and want to
+see if `./gradle test` or `./gradle check` passes, then you have re-run those
+commands by typing them in again.
+
+Happily, Gradle gives us the `--continuous` (or `-t` for short) flag to simplify
+these use cases. If, for example, you enter `./gradlew --continuous run`, then
+Gradle will automagically notice when relevant files have changed, recompile, and
+re-run the project. Similarly, you can have `./gradlew --continuous check` running
+in a terminal and it will automatically re-run the checks whenever you save changes.
+
+:bangbang: Make sure the terminals running continuous Gradle tasks are visible so
+you can see if, for example, tests fail or the project doesn't even compile anymore.
+Otherwise you can end up doing a lot of work that builds on broken code.
 
 ## Continuous Integration with GitHub Actions
 
