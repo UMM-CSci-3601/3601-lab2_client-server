@@ -273,7 +273,13 @@ api/todos?owner=Blanche&status=complete&limit=12&orderBy=category
 ```
 
 which would return the first 12 completed to-dos owned by
-Blanche ordered by category. Make sure you do the limiting step last so you don't miss any items.
+Blanche ordered by category.
+
+:bangbang: If you have a combination of `limit` with other filters,
+make sure you do the limiting step **last** so you don't miss any items.
+If you limit first to, say, 10 todos, then you might get down to the
+requested 10 todos, but then have later filters bring that down to 7
+or 5 or even zero. So make sure you limit last!
 
 Each of these if implemented properly should work in the provided client.
 
