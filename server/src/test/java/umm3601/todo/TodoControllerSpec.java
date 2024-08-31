@@ -15,8 +15,6 @@ import org.mockito.MockitoAnnotations;
 
 import io.javalin.http.Context;
 import umm3601.Main;
-import umm3601.user.UserController;
-import umm3601.user.UserDatabase;
 
 public class TodoControllerSpec {
   private static TodoDatabase db;
