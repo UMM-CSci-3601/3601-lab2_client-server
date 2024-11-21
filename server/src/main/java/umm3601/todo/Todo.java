@@ -1,0 +1,20 @@
+package umm3601.todo;
+
+// Normally you'd want all fields to be private, but
+// we need the fields in this class to be public since
+// they will be written to by the Jackson library. We
+// need to suppress the Visibility Modifier
+// (https://checkstyle.sourceforge.io/config_design.html#VisibilityModifier)
+// check in CheckStyle so that we don't get a failed
+// build when Gradle runs CheckStyle.
+@SuppressWarnings({"VisibilityModifier"})
+public class Todo {
+  // By default Java field names shouldn't start with underscores.
+  // Here, though, we *have* to use the name `_id` to match the
+  // name of the field in the database.
+  @SuppressWarnings({"MemberName"})  public String _id;
+  public String owner;
+  public boolean status;
+  public String body;
+  public String category;
+}
